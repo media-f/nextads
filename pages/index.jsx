@@ -40,6 +40,7 @@ export default function Home() {
 
     <div className='adslot halfpage' id="adnz_halfpage_1"></div>
    
+    
     <Script
         id="admanager-script"
         src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
@@ -58,8 +59,9 @@ export default function Home() {
                 googletag.defineSlot('/95737030/LG_wideboard_1', [[300,250]], 'lg_wideboard_1').addService(googletag.pubads());
                 googletag.defineSlot('/95737030/LG_wideboard_2', [[300,250], [320,460]], 'lg_wideboard_2').addService(googletag.pubads());
             }
-            googletag.defineSlot('/95737030/LG_rectangle_1', [[320, 460], [300, 250]], 'lg_rectangle_1').addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
+            googletag.defineSlot('/95737030/LG_halfpage_1', [[300, 250], [300, 600]], 'lg_halfpage_1').addService(googletag.pubads());
+            
+            googletag.pubads().disableInitialLoad();
             googletag.enableServices();
         })
         
