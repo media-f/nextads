@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Flow+Block&display=swap');
+
+@media (min-width: 1200px) {
+    body .container {
+        max-width: 994px;
+    }
+}
+
+.flow {
+    font-family: "Flow Block", sans-serif;
+}
+
+.columns-3 {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    gap: 1rem;
+    width: 100%;
+    margin: 3rem 0;
+}
+
+
+.imgplaceholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: rgb(0,212,255);
+    background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(204,204,204,1) 100%);
+}
+
+@media (min-width: 992px) {
+    .columns-3  {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+  
+   

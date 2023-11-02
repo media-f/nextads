@@ -1,0 +1,55 @@
+.adslot {
+    margin:auto;
+    text-align: center;
+    background-color: #ececec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.adslot:empty, .adslot[data-adnz-shown="0"] {
+    background-image: url( '/placeholder_display.svg' );
+    background-position-x: right;
+}
+
+@media (prefers-color-scheme: dark) {
+    .adslot {
+        background-color: #202020;
+    }
+}
+
+.wideboard {
+    min-width: 320px;
+    min-height: 250px;
+}
+
+.halfpage {
+    display: none;
+    width: 300px;
+    height: 600px;
+}
+
+.rectangle {
+    width: 300px;
+    height: 250px;
+}
+
+.paidpost {
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .wideboard {
+        width: 994px;
+    }
+}
+
+@media (min-width: 1750px) {
+    .halfpage {
+        display: block;
+        position: fixed;
+        right: 50px;
+        top: 100px;
+    }
+}
