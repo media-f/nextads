@@ -13,10 +13,11 @@ export default function Native() {
         setTimeout(() => {
           const { googletag } = window
           if(googletag.cmd) {
+              console.log('displaying ads')
               googletag.cmd.push(() => {
-                googletag.display('lg_halfpage_1');
-                googletag.display('lg_rectangle_1');
-                googletag.pubads().refresh();
+                  googletag.display('lg_halfpage_1');
+                  googletag.display('lg_rectangle_1');
+                  googletag.pubads().refresh();
               })
           }
    
@@ -24,7 +25,7 @@ export default function Native() {
     
       
 
-      })
+      }, [])
 
     return <>
 
@@ -44,7 +45,7 @@ export default function Native() {
 
     <div data-placement="qbU0VKDGyS" data-items="3"></div>
 
-    <div className='adslot halfpage' id="lg_halfpage"></div>
+    <div className='adslot halfpage' id="lg_halfpage_1"></div>
 
     <Script
         id="admanager-script"

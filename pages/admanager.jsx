@@ -9,6 +9,7 @@ export default function AdManager() {
         setTimeout(() => {
             const { googletag } = window
             if(googletag.cmd) {
+                console.log('displaying ads')
                 googletag.cmd.push(() => {
                     googletag.display('lg_wideboard_1');
                     googletag.display('lg_wideboard_2');
@@ -19,7 +20,7 @@ export default function AdManager() {
             }
      
         }, 1000)
-    })
+    }, [])
 
   return <>
 
