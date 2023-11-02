@@ -17,9 +17,11 @@ export default function AdManager() {
                         googletag.display('lg_wideboard_1');
                         googletag.display('lg_wideboard_2');
                         googletag.display('lg_halfpage_1');
+                        console.log('desktop mode')
                     }
                     else {
                         googletag.display('lg_rectangle_1');
+                        console.log('mobile mode')
                     }
                     googletag.pubads().refresh();
                 })
