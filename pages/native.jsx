@@ -9,7 +9,7 @@ export default function Native() {
         if(window.pubonline) window.pubonline.loadAds()
 
         // google admanager :
-        setTimeout(() => {
+        
             const { googletag } = window
             if(googletag.cmd) {
                 googletag.cmd.push(() => {
@@ -17,7 +17,7 @@ export default function Native() {
                 })
             }
     
-        }, 300)
+      
 
       })
 
@@ -61,7 +61,7 @@ export default function Native() {
             }
             googletag.defineSlot('/95737030/LG_halfpage_1', [[300, 250], [300, 600]], 'lg_halfpage_1').addService(googletag.pubads());
             googletag.defineSlot('/95737030/LG_rectangle_1', [[320, 460], [300, 250]], 'lg_rectangle_1').addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
+            googletag.pubads().disableInitialLoad();
             googletag.enableServices();
         })
         
