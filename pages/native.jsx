@@ -10,12 +10,17 @@ export default function Native() {
 
         // google admanager :
         
-            const { googletag } = window
-            if(googletag.cmd) {
-                googletag.cmd.push(() => {
-                    googletag.pubads().refresh();
-                })
-            }
+        setTimeout(() => {
+          const { googletag } = window
+          if(googletag.cmd) {
+              googletag.cmd.push(() => {
+                googletag.display('lg_halfpage_1');
+                googletag.display('lg_rectangle_1');
+                googletag.pubads().refresh();
+              })
+          }
+   
+      }, 1000)
     
       
 
@@ -33,13 +38,13 @@ export default function Native() {
 
     <Columns></Columns><div data-placement="qbU0VKDGyS" data-items="1"></div>
 
-    <Columns></Columns>
+    <Columns><div className='adslot rectangle' id="lg_rectangle_1"></div></Columns>
 
     <Columns></Columns>
 
     <div data-placement="qbU0VKDGyS" data-items="3"></div>
 
-    <div className='adslot halfpage' id="lg_halfpage_1"></div>
+    <div className='adslot halfpage' id="lg_halfpage"></div>
 
     <Script
         id="admanager-script"

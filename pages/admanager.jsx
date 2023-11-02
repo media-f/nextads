@@ -10,11 +10,15 @@ export default function AdManager() {
             const { googletag } = window
             if(googletag.cmd) {
                 googletag.cmd.push(() => {
+                    googletag.display('lg_wideboard_1');
+                    googletag.display('lg_wideboard_2');
+                    googletag.display('lg_halfpage_1');
+                    googletag.display('lg_rectangle_1');
                     googletag.pubads().refresh();
                 })
             }
      
-        }, 300)
+        }, 1000)
     })
 
   return <>
@@ -57,7 +61,7 @@ export default function AdManager() {
             }
             googletag.defineSlot('/95737030/LG_halfpage_1', [[300, 250], [300, 600]], 'lg_halfpage_1').addService(googletag.pubads());
             googletag.defineSlot('/95737030/LG_rectangle_1', [[320, 460], [300, 250]], 'lg_rectangle_1').addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
+            googletag.pubads().disableInitialLoad();
             googletag.enableServices();
         })
         
