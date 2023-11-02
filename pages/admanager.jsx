@@ -8,21 +8,8 @@ export default function AdManager() {
     useEffect(() => {
         setTimeout(() => {
             const { googletag } = window
-
             if(googletag.cmd) {
-            
                 googletag.cmd.push(() => {
-                    let width = window.innerWidth;
-                    if (width > 994) {
-                        googletag.display('lg_wideboard_1');
-                        googletag.display('lg_wideboard_2');
-                        googletag.display('lg_halfpage_1');
-                        console.log('desktop mode')
-                    }
-                    else {
-                        googletag.display('lg_rectangle_1');
-                        console.log('mobile mode')
-                    }
                     googletag.pubads().refresh();
                 })
             }
@@ -47,6 +34,8 @@ export default function AdManager() {
     <Columns></Columns>
 
     <div id='lg_halfpage_1' className='adslot halfpage'></div>
+
+    <div></div>
 
     <Script
         id="admanager-script"
