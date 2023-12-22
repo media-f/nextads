@@ -8,6 +8,7 @@ export default function Article() {
             <li><Link href="/native?adpreview=test">Native</Link></li>
             {/* <li><Link href="/yaleo?adpreview=test">Yaleo</Link></li> */}
             <li><Link href="/admanager?adpreview=test">Google Admanager</Link></li>
+            <li><Link href="/agri">Agri</Link></li>
         </ul>
     </nav>
   }
