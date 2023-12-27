@@ -14,6 +14,7 @@ export default function Agri() {
                     googletag.display('AGRI_WIDEBOARD_1');
                     googletag.display('AGRI_WIDEBOARD_2');
                     googletag.display('AGRI_WIDEBOARD_3');
+                    googletag.display('AGRI_WIDEBOARD_4');
                     googletag.display('AGRI_HALFPAGE_1');
                     googletag.pubads().refresh();
                 })
@@ -24,22 +25,28 @@ export default function Agri() {
 
   return <>
 
-    <h1>Journal Agri</h1>
-    
+    <h3>Wideboard 1</h3>
     <div id='AGRI_WIDEBOARD_1' className="adslot wideboard"></div>
 
-    <Columns></Columns>
-         
-    <Columns></Columns>    
-    
-    <div id='AGRI_WIDEBOARD_2' className="adslot wideboard"></div>
-    
-    <Columns></Columns>    
+    <h1>Journal Agri</h1>
 
+    <Columns></Columns>
+    <Columns></Columns>
+
+    <h3>Wideboard 2</h3>
+    <div id='AGRI_WIDEBOARD_2' className="adslot wideboard"></div>
+    <Columns></Columns>    
+    
+    <h3>Wideboard 3</h3>
     <div id='AGRI_WIDEBOARD_3' className="adslot wideboard"></div>
     
+    <Columns></Columns>
+
+    <h3>Wideboard 4</h3>
+    <div id='AGRI_WIDEBOARD_4' className="adslot wideboard"></div>
 
     <Columns></Columns>
+
 
     <div id='AGRI_HALFPAGE_1' className='adslot halfpage'></div>
 
@@ -59,11 +66,13 @@ export default function Agri() {
                 googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_1', [[994, 250], [994, 500], [994, 118]], 'AGRI_WIDEBOARD_1').addService(googletag.pubads());
                 googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_2', [[994, 250], [994, 500], [994, 118]], 'AGRI_WIDEBOARD_2').addService(googletag.pubads());
                 googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_3', [[994, 250], [994, 500], [994, 118]], 'AGRI_WIDEBOARD_3').addService(googletag.pubads());
+                googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_4', [[994, 250], [994, 500], [994, 118]], 'AGRI_WIDEBOARD_4').addService(googletag.pubads());
             }
             else {
                 googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_1', [[300,250]], 'AGRI_WIDEBOARD_1').addService(googletag.pubads());
                 googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_2', [[300,250], [320,460]], 'AGRI_WIDEBOARD_2').addService(googletag.pubads());
                 googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_3', [[300,250], [320,460]], 'AGRI_WIDEBOARD_3').addService(googletag.pubads());
+                googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_4', [[300,250], [320,460]], 'AGRI_WIDEBOARD_4').addService(googletag.pubads());
             }
             googletag.defineSlot('/23038965275/AGRI_HALFPAGE_1', [[300, 250], [300, 600]], 'AGRI_HALFPAGE_1').addService(googletag.pubads());
             
