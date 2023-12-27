@@ -26,7 +26,7 @@ export default function Agri() {
   return <>
 
     <h3>Wideboard 1</h3>
-    <div id='AGRI_WIDEBOARD_1' className="adslot wideboard"></div>
+    <div id='AGRI_WIDEBOARD_1' className="adslot adslot__agri wideboard"></div>
 
     <h1>Journal Agri</h1>
 
@@ -34,21 +34,21 @@ export default function Agri() {
     <Columns></Columns>
 
     <h3>Wideboard 2</h3>
-    <div id='AGRI_WIDEBOARD_2' className="adslot wideboard"></div>
+    <div id='AGRI_WIDEBOARD_2' className="adslot adslot__agri wideboard"></div>
     <Columns></Columns>    
     
     <h3>Wideboard 3</h3>
-    <div id='AGRI_WIDEBOARD_3' className="adslot wideboard"></div>
+    <div id='AGRI_WIDEBOARD_3' className="adslot adslot__agri wideboard"></div>
     
     <Columns></Columns>
 
     <h3>Wideboard 4</h3>
-    <div id='AGRI_WIDEBOARD_4' className="adslot wideboard"></div>
+    <div id='AGRI_WIDEBOARD_4' className="adslot adslot__agri wideboard"></div>
 
     <Columns></Columns>
 
 
-    <div id='AGRI_HALFPAGE_1' className='adslot halfpage'></div>
+    <div id='AGRI_HALFPAGE_1' className='adslot adslot__agri halfpage'></div>
 
     <div></div>
 

@@ -13,6 +13,12 @@
     background-position-x: right;
 }
 
+
+.adslot__agri:empty {
+    background-image: none;
+}
+
+
 @media (prefers-color-scheme: dark) {
     .adslot {
         background-color: #202020;
