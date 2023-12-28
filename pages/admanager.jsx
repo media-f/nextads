@@ -1,53 +1,54 @@
-import Script from 'next/script'
-import { useEffect } from 'react'
-import Columns from '../components/columns'
-
+import Script from "next/script";
+import { useEffect } from "react";
+import Columns from "../components/columns";
 
 export default function AdManager() {
+  useEffect(() => {
+    setTimeout(() => {
+      const { googletag } = window;
+      if (googletag.cmd) {
+        console.log("displaying ads");
+        googletag.cmd.push(() => {
+          googletag.display("lg_wideboard_1");
+          googletag.display("lg_wideboard_2");
+          googletag.display("lg_halfpage_1");
+          googletag.display("lg_rectangle_1");
+          googletag.pubads().refresh();
+        });
+      }
+    }, 1000);
+  }, []);
 
-    useEffect(() => {
-        setTimeout(() => {
-            const { googletag } = window
-            if(googletag.cmd) {
-                console.log('displaying ads')
-                googletag.cmd.push(() => {
-                    googletag.display('lg_wideboard_1');
-                    googletag.display('lg_wideboard_2');
-                    googletag.display('lg_halfpage_1');
-                    googletag.display('lg_rectangle_1');
-                    googletag.pubads().refresh();
-                })
-            }
-     
-        }, 1000)
-    }, [])
+  return (
+    <>
+      <section>
+        <h1>Google Admanager</h1>
 
-  return <>
+        <div id="lg_wideboard_1" className="adslot wideboard"></div>
 
-    <h1>Google Admanager</h1>
-    
-    <div id='lg_wideboard_1' className="adslot wideboard"></div>
+        <Columns></Columns>
 
-    <Columns></Columns>
+        <Columns>
+          <div id="lg_rectangle_1" className="adslot rectangle"></div>
+        </Columns>
 
-    <Columns><div id='lg_rectangle_1' className="adslot rectangle"></div></Columns>
-            
-    <Columns></Columns>    
-    
-    <div id='lg_wideboard_2' className="adslot wideboard"></div>
+        <Columns></Columns>
 
-    <Columns></Columns>
+        <div id="lg_wideboard_2" className="adslot wideboard"></div>
 
-    <div id='lg_halfpage_1' className='adslot halfpage'></div>
+        <Columns></Columns>
+      </section>
 
-    <div></div>
+      <aside>
+        <div id="lg_halfpage_1" className="adslot halfpage"></div>
+      </aside>
 
-    <Script
+      <Script
         id="admanager-script"
         src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
         strategy="lazyOnload"
-    />
-    <Script id="define-slots" strategy="lazyOnload">{`
+      />
+      <Script id="define-slots" strategy="lazyOnload">{`
         window.googletag = window.googletag || {cmd: []};
         
         googletag.cmd.push(function() {
@@ -67,7 +68,6 @@ export default function AdManager() {
         })
         
     `}</Script>
-
-        
-      </>
+    </>
+  );
 }

@@ -1,22 +1,25 @@
-import Columns from '../components/columns'
-import { useEffect } from 'react'
+import Columns from "../components/columns";
+import { useEffect } from "react";
 
 export default function Article() {
+  useEffect(() => {
+    if (window.pubonline) window.pubonline.loadAds();
+  });
+  return (
+    <>
+      <section>
+        <h1>Native</h1>
 
-    useEffect(() => {
-        if(window.pubonline) window.pubonline.loadAds()
-      })
-    return <>
+        <div>
+          <i>Le contenu natif doit apparaitre ci-dessous :</i>
+        </div>
 
-    <h1>Native</h1>
+        <hr />
 
-    <div><i>Le contenu natif doit apparaitre ci-dessous :</i></div>
-    
-    <hr />
-    
-    <div id="native-content" className="paidpost"></div>
+        <div id="native-content" className="paidpost"></div>
 
-    <hr />
-
+        <hr />
+      </section>
     </>
+  );
 }

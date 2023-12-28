@@ -1,39 +1,44 @@
-import Columns from '../components/columns'
-import { useEffect } from 'react'
+import Columns from "../components/columns";
+import { useEffect } from "react";
 
 export default function Xandr() {
+  useEffect(() => {
+    if (window.pubonline) window.pubonline.loadAds();
+  }, []);
 
-    useEffect(() => {
-        if(window.pubonline) window.pubonline.loadAds()
-    }, [])
+  return (
+    <>
+      <section>
+        <h1>Xandr</h1>
 
-    return <>
+        <div>
+          <div id="adnz_wideboard_1" className="adslot wideboard"></div>
+        </div>
 
-    <h1>Xandr</h1>
+        <Columns></Columns>
 
-    <div >
-        <div id="adnz_wideboard_1" className="adslot wideboard" ></div>
-    </div>
+        <Columns>
+          <div className="adslot rectangle" id="adnz_rectangle_1"></div>
+        </Columns>
 
-    <Columns></Columns>
+        <Columns></Columns>
 
-    <Columns><div className="adslot rectangle" id="adnz_rectangle_1"></div></Columns>
+        <div className="adslot wideboard" id="adnz_wideboard_2"></div>
 
-    <Columns></Columns>
+        <Columns></Columns>
 
-    <div className="adslot wideboard" id="adnz_wideboard_2"></div>
-      
-    <Columns></Columns>
+        <Columns></Columns>
 
-    <Columns></Columns>
-    
-    <Columns></Columns>
+        <Columns></Columns>
 
-    <div className="adslot wideboard" id="adnz_wideboard_3"></div>
+        <div className="adslot wideboard" id="adnz_wideboard_3"></div>
 
-   <Columns></Columns>
+        <Columns></Columns>
+      </section>
 
-   <div className='adslot halfpage' id="adnz_halfpage_1"></div>
-   
+      <aside>
+        <div className="adslot halfpage" id="adnz_halfpage_1"></div>
+      </aside>
     </>
+  );
 }

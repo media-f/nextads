@@ -1,58 +1,60 @@
-import Columns from '../components/columns'
-import { useEffect } from 'react'
-import Script from 'next/script'
+import Columns from "../components/columns";
+import { useEffect } from "react";
+import Script from "next/script";
 
 export default function Native() {
+  useEffect(() => {
+    // native :
+    if (window.pubonline) window.pubonline.loadAds();
 
-    useEffect(() => {
-        // native :
-        if(window.pubonline) window.pubonline.loadAds()
+    // google admanager :
 
-        // google admanager :
-        
-        setTimeout(() => {
-          const { googletag } = window
-          if(googletag.cmd) {
-              console.log('displaying ads')
-              googletag.cmd.push(() => {
-                  googletag.display('lg_halfpage_1');
-                  googletag.display('lg_rectangle_1');
-                  googletag.pubads().refresh();
-              })
-          }
-   
-      }, 1000)
-    
-      
+    setTimeout(() => {
+      const { googletag } = window;
+      if (googletag.cmd) {
+        console.log("displaying ads");
+        googletag.cmd.push(() => {
+          googletag.display("lg_halfpage_1");
+          googletag.display("lg_rectangle_1");
+          googletag.pubads().refresh();
+        });
+      }
+    }, 1000);
+  }, []);
 
-      }, [])
+  return (
+    <>
+      <section>
+        <h1>Native</h1>
 
-    return <>
+        <Columns></Columns>
 
-    <h1>Native</h1>
-    
-    <Columns></Columns>
+        <div data-placement="qbU0VKDGyS" data-items="3"></div>
 
-    <div data-placement="qbU0VKDGyS" data-items="3"></div>
+        <Columns></Columns>
 
-    <Columns></Columns>
+        <Columns></Columns>
+        <div data-placement="qbU0VKDGyS" data-items="1"></div>
 
-    <Columns></Columns><div data-placement="qbU0VKDGyS" data-items="1"></div>
+        <Columns>
+          <div className="adslot rectangle" id="lg_rectangle_1"></div>
+        </Columns>
 
-    <Columns><div className='adslot rectangle' id="lg_rectangle_1"></div></Columns>
+        <Columns></Columns>
 
-    <Columns></Columns>
+        <div data-placement="qbU0VKDGyS" data-items="3"></div>
+      </section>
 
-    <div data-placement="qbU0VKDGyS" data-items="3"></div>
+      <aside>
+        <div className="adslot halfpage" id="lg_halfpage_1"></div>
+      </aside>
 
-    <div className='adslot halfpage' id="lg_halfpage_1"></div>
-
-    <Script
+      <Script
         id="admanager-script"
         src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
         strategy="lazyOnload"
-    />
-    <Script id="define-slots" strategy="lazyOnload">{`
+      />
+      <Script id="define-slots" strategy="lazyOnload">{`
         window.googletag = window.googletag || {cmd: []};
         
         googletag.cmd.push(function() {
@@ -72,6 +74,6 @@ export default function Native() {
         })
         
     `}</Script>
-       
     </>
+  );
 }

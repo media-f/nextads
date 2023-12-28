@@ -1,63 +1,77 @@
-import Script from 'next/script'
-import { useEffect } from 'react'
-import Columns from '../components/columns'
-
+import Script from "next/script";
+import { useEffect } from "react";
+import Columns from "../components/columns";
 
 export default function Agri() {
+  useEffect(() => {
+    setTimeout(() => {
+      const { googletag } = window;
+      if (googletag.cmd) {
+        console.log("displaying ads");
+        googletag.cmd.push(() => {
+          googletag.display("AGRI_WIDEBOARD_1");
+          googletag.display("AGRI_WIDEBOARD_2");
+          googletag.display("AGRI_WIDEBOARD_3");
+          googletag.display("AGRI_WIDEBOARD_4");
+          googletag.display("AGRI_HALFPAGE_1");
+          googletag.pubads().refresh();
+        });
+      }
+    }, 1000);
+  }, []);
 
-    useEffect(() => {
-        setTimeout(() => {
-            const { googletag } = window
-            if(googletag.cmd) {
-                console.log('displaying ads')
-                googletag.cmd.push(() => {
-                    googletag.display('AGRI_WIDEBOARD_1');
-                    googletag.display('AGRI_WIDEBOARD_2');
-                    googletag.display('AGRI_WIDEBOARD_3');
-                    googletag.display('AGRI_WIDEBOARD_4');
-                    googletag.display('AGRI_HALFPAGE_1');
-                    googletag.pubads().refresh();
-                })
-            }
-     
-        }, 1000)
-    }, [])
+  return (
+    <>
+      <section>
+        <h3>Wideboard 1</h3>
+        <div
+          id="AGRI_WIDEBOARD_1"
+          className="adslot adslot__agri wideboard"
+        ></div>
 
-  return <>
+        <h1>Journal Agri</h1>
 
-    <h3>Wideboard 1</h3>
-    <div id='AGRI_WIDEBOARD_1' className="adslot adslot__agri wideboard"></div>
+        <Columns></Columns>
+        <Columns></Columns>
 
-    <h1>Journal Agri</h1>
+        <h3>Wideboard 2</h3>
+        <div
+          id="AGRI_WIDEBOARD_2"
+          className="adslot adslot__agri wideboard"
+        ></div>
+        <Columns></Columns>
 
-    <Columns></Columns>
-    <Columns></Columns>
+        <h3>Wideboard 3</h3>
+        <div
+          id="AGRI_WIDEBOARD_3"
+          className="adslot adslot__agri wideboard"
+        ></div>
 
-    <h3>Wideboard 2</h3>
-    <div id='AGRI_WIDEBOARD_2' className="adslot adslot__agri wideboard"></div>
-    <Columns></Columns>    
-    
-    <h3>Wideboard 3</h3>
-    <div id='AGRI_WIDEBOARD_3' className="adslot adslot__agri wideboard"></div>
-    
-    <Columns></Columns>
+        <Columns></Columns>
 
-    <h3>Wideboard 4</h3>
-    <div id='AGRI_WIDEBOARD_4' className="adslot adslot__agri wideboard"></div>
+        <h3>Wideboard 4</h3>
+        <div
+          id="AGRI_WIDEBOARD_4"
+          className="adslot adslot__agri wideboard"
+        ></div>
 
-    <Columns></Columns>
+        <Columns></Columns>
 
+      </section>
+      <aside>
+        <h3>Halfpage (sticky)</h3>
+        <div
+          id="AGRI_HALFPAGE_1"
+          className="adslot adslot__agri halfpage"
+        ></div>
+      </aside>
 
-    <div id='AGRI_HALFPAGE_1' className='adslot adslot__agri halfpage'></div>
-
-    <div></div>
-
-    <Script
+      <Script
         id="admanager-script"
         src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
         strategy="lazyOnload"
-    />
-    <Script id="define-slots" strategy="lazyOnload">{`
+      />
+      <Script id="define-slots" strategy="lazyOnload">{`
         window.googletag = window.googletag || {cmd: []};
         
         googletag.cmd.push(function() {
@@ -81,7 +95,6 @@ export default function Agri() {
         })
         
     `}</Script>
-
-        
-      </>
+    </>
+  );
 }
