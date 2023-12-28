@@ -1,4 +1,5 @@
 import Script from "next/script";
+import Link from 'next/link';
 import { useEffect } from "react";
 import Columns from "../components/columns";
 
@@ -30,7 +31,7 @@ export default function Agri() {
         ></div>
 
         <h1>Journal Agri</h1>
-
+        <Link href="/agri-page"> Page article Agri</Link>
         <Columns></Columns>
         <Columns></Columns>
 
