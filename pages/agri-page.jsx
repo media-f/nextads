@@ -5,6 +5,25 @@ import Columns from "../components/columns";
 
 export default function Agri() {
   useEffect(() => {
+    window.googletag = window.googletag || {cmd: []};
+        
+    googletag.cmd.push(function() {
+        let width = window.innerWidth;
+        if (width > 994) {
+            googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_1', [[994, 250], [994, 500], [994, 118]], 'AGRI_WIDEBOARD_1').addService(googletag.pubads());
+            googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_2', [[994, 250], [994, 500], [994, 118]], 'AGRI_WIDEBOARD_2').addService(googletag.pubads());
+            googletag.defineSlot('/23038965275/AGRI_HALFPAGE_1', [[300, 250], [300, 600]], 'AGRI_HALFPAGE_1').addService(googletag.pubads());
+        }
+        else {
+            googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_1', [[300,250]], 'AGRI_WIDEBOARD_1').addService(googletag.pubads());
+            googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_2', [[300,250], [320,460]], 'AGRI_WIDEBOARD_2').addService(googletag.pubads());
+        }
+        
+        
+        googletag.pubads().disableInitialLoad();
+        googletag.enableServices();
+    });
+
     setTimeout(() => {
       const { googletag } = window;
       if (googletag.cmd) {
@@ -117,31 +136,7 @@ export default function Agri() {
         src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
         strategy="lazyOnload"
       />
-      <Script id="define-slots" strategy="lazyOnload">{`
-        window.googletag = window.googletag || {cmd: []};
-        
-        googletag.cmd.push(function() {
-            let width = window.innerWidth;
-            if (width > 994) {
-                googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_1', [[994, 250], [994, 500], [994, 118]], 'AGRI_WIDEBOARD_1').addService(googletag.pubads());
-                googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_2', [[994, 250], [994, 500], [994, 118]], 'AGRI_WIDEBOARD_2').addService(googletag.pubads());
-                googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_3', [[994, 250], [994, 500], [994, 118]], 'AGRI_WIDEBOARD_3').addService(googletag.pubads());
-                googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_4', [[994, 250], [994, 500], [994, 118]], 'AGRI_WIDEBOARD_4').addService(googletag.pubads());
-                googletag.defineSlot('/23038965275/AGRI_HALFPAGE_1', [[300, 250], [300, 600]], 'AGRI_HALFPAGE_1').addService(googletag.pubads());
-            }
-            else {
-                googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_1', [[300,250]], 'AGRI_WIDEBOARD_1').addService(googletag.pubads());
-                googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_2', [[300,250], [320,460]], 'AGRI_WIDEBOARD_2').addService(googletag.pubads());
-                googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_3', [[300,250], [320,460]], 'AGRI_WIDEBOARD_3').addService(googletag.pubads());
-                googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_4', [[300,250], [320,460]], 'AGRI_WIDEBOARD_4').addService(googletag.pubads());
-            }
-            
-            
-            googletag.pubads().disableInitialLoad();
-            googletag.enableServices();
-        })
-        
-    `}</Script>
+
     </>
   );
 }
