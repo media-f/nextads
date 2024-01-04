@@ -30,8 +30,6 @@ export default function Agri() {
         });
 
     setTimeout(() => {
-      const { googletag } = window;
-      
       if (googletag.cmd) {
         console.log("displaying ads");
         googletag.cmd.push(() => {
