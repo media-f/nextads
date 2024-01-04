@@ -8,7 +8,11 @@ export default function Agri() {
 
     window.googletag = window.googletag || {cmd: []};
 
-    googletag.destroySlots();
+    // destroy GPT ads slots
+    if (window.googletag && typeof window.googletag.destroySlots === "function") {
+      window.googletag.destroySlots();
+      console.log('Destroy slots')
+    }
         
     googletag.cmd.push(function() {
         let width = window.innerWidth;
