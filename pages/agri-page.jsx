@@ -22,21 +22,23 @@ export default function Agri() {
         
         googletag.pubads().disableInitialLoad();
         googletag.enableServices();
+
+        if (googletag.cmd) {
+          console.log("displaying ads");
+          googletag.cmd.push(() => {
+            googletag.display("AGRI_WIDEBOARD_1");
+            googletag.display("AGRI_WIDEBOARD_2");
+            googletag.display("AGRI_WIDEBOARD_3");
+            googletag.display("AGRI_WIDEBOARD_4");
+            googletag.display("AGRI_HALFPAGE_1");
+            googletag.pubads().refresh();
+          });
+        }
+
+
     });
 
-    setTimeout(() => {
-      if (googletag.cmd) {
-        console.log("displaying ads");
-        googletag.cmd.push(() => {
-          googletag.display("AGRI_WIDEBOARD_1");
-          googletag.display("AGRI_WIDEBOARD_2");
-          googletag.display("AGRI_WIDEBOARD_3");
-          googletag.display("AGRI_WIDEBOARD_4");
-          googletag.display("AGRI_HALFPAGE_1");
-          googletag.pubads().refresh();
-        });
-      }
-    }, 1000);
+
   }, []);
 
   return (
