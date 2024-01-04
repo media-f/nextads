@@ -10,10 +10,12 @@ export default function Agri() {
     // destroy GPT ads slots
     if (window.googletag && typeof window.googletag.destroySlots === "function") {
       window.googletag.destroySlots();
-      console.log('Destroy slots')
+      console.log('destroy ad slots')
     }
 
+    
     googletag.cmd.push(function() {
+      //define ad slots present on the page
         let width = window.innerWidth;
         if (width > 994) {
             googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_1', [[994, 250], [994, 500], [994, 118]], 'AGRI_WIDEBOARD_1').addService(googletag.pubads());
@@ -25,19 +27,17 @@ export default function Agri() {
             googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_2', [[300,250], [320,460]], 'AGRI_WIDEBOARD_2').addService(googletag.pubads());
         }
         
-        
         googletag.pubads().disableInitialLoad();
         googletag.enableServices();
 
-        if (googletag.cmd) {
-          console.log("displaying ads");
-          googletag.cmd.push(() => {
-            googletag.display("AGRI_WIDEBOARD_1");
-            googletag.display("AGRI_WIDEBOARD_2");
-            googletag.display("AGRI_HALFPAGE_1");
-            googletag.pubads().refresh();
-          });
-        }
+        // load ads
+        console.log("displaying ads");
+        googletag.display("AGRI_WIDEBOARD_1");
+        googletag.display("AGRI_WIDEBOARD_2");
+        googletag.display("AGRI_HALFPAGE_1");
+        googletag.pubads().refresh();
+          
+        
 
 
     });
