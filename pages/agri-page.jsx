@@ -12,7 +12,7 @@ export default function Agri() {
       window.googletag.destroySlots();
       console.log('Destroy slots')
     }
-    
+
     googletag.cmd.push(function() {
         let width = window.innerWidth;
         if (width > 994) {
@@ -34,8 +34,6 @@ export default function Agri() {
           googletag.cmd.push(() => {
             googletag.display("AGRI_WIDEBOARD_1");
             googletag.display("AGRI_WIDEBOARD_2");
-            googletag.display("AGRI_WIDEBOARD_3");
-            googletag.display("AGRI_WIDEBOARD_4");
             googletag.display("AGRI_HALFPAGE_1");
             googletag.pubads().refresh();
           });
