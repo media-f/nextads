@@ -30,12 +30,14 @@ export default function Agri() {
         googletag.pubads().disableInitialLoad();
         googletag.enableServices();
 
-        // load ads
-        console.log("displaying ads");
-        googletag.display("AGRI_WIDEBOARD_1");
-        googletag.display("AGRI_WIDEBOARD_2");
-        googletag.display("AGRI_HALFPAGE_1");
-        googletag.pubads().refresh();
+        //wait 100ms before displaying ads
+        setTimeout(function(){
+          console.log("displaying ads");
+          googletag.display("AGRI_WIDEBOARD_1");
+          googletag.display("AGRI_WIDEBOARD_2");
+          googletag.display("AGRI_HALFPAGE_1");
+          googletag.pubads().refresh();
+        }, 100);
           
         
 
