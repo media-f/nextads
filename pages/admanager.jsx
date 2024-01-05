@@ -28,13 +28,15 @@ export default function AdManager() {
         googletag.pubads().disableInitialLoad();
         googletag.enableServices();
 
-        // load ads
-        console.log("displaying ads");
-        googletag.display("lg_wideboard_1");
-        googletag.display("lg_wideboard_2");
-        googletag.display("lg_halfpage_1");
-        googletag.display("lg_rectangle_1");
-        googletag.pubads().refresh();
+        //wait 100ms before displaying ads
+        setTimeout(function(){
+          console.log("displaying ads");
+          googletag.display("lg_wideboard_1");
+          googletag.display("lg_wideboard_2");
+          googletag.display("lg_halfpage_1");
+          googletag.display("lg_rectangle_1");
+          googletag.pubads().refresh();
+        });
 
     });
 
