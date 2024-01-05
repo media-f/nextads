@@ -30,6 +30,9 @@ export default function Agri() {
             googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_3', [[300,250], [320,460]], 'AGRI_WIDEBOARD_3').addService(googletag.pubads());
             googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_4', [[300,250], [320,460]], 'AGRI_WIDEBOARD_4').addService(googletag.pubads());
         }
+
+        googletag.defineSlot('/23038965275/AGRI_RECTANGLE_1', [[300,250], [250,250]], 'AGRI_RECTANGLE_1').addService(googletag.pubads());
+        googletag.defineSlot('/23038965275/AGRI_RECTANGLE_2', [[300,250], [250,250]], 'AGRI_RECTANGLE_2').addService(googletag.pubads());
         
         googletag.pubads().disableInitialLoad();
         googletag.enableServices();
@@ -42,6 +45,8 @@ export default function Agri() {
           googletag.display("AGRI_WIDEBOARD_3");
           googletag.display("AGRI_WIDEBOARD_4");
           googletag.display("AGRI_HALFPAGE_1");
+          googletag.display("AGRI_RECTANGLE_1");
+          googletag.display("AGRI_RECTANGLE_2");
           googletag.pubads().refresh();
         }, 100);
         
@@ -63,7 +68,9 @@ export default function Agri() {
 
         <h1>Journal Agri</h1>
         <Link href="/agri-page"> Page article Agri</Link>
-        <Columns></Columns>
+        <Columns>
+          <div id="AGRI_RECTANGLE_1" className="adslot rectangle"></div>
+        </Columns>
         <Columns></Columns>
 
         <h3>Wideboard 2</h3>
@@ -79,6 +86,9 @@ export default function Agri() {
           className="adslot adslot__agri wideboard"
         ></div>
 
+        <Columns>
+          <div id="AGRI_RECTANGLE_2" className="adslot rectangle"></div>
+        </Columns>
         <Columns></Columns>
 
         <h3>Wideboard 4</h3>

@@ -26,6 +26,7 @@ export default function Agri() {
             googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_1', [[300,250]], 'AGRI_WIDEBOARD_1').addService(googletag.pubads());
             googletag.defineSlot('/23038965275/AGRI_WIDEBOARD_2', [[300,250], [320,460]], 'AGRI_WIDEBOARD_2').addService(googletag.pubads());
         }
+        googletag.defineSlot('/23038965275/AGRI_RECTANGLE_1', [[300,250], [250,250]], 'AGRI_RECTANGLE_1').addService(googletag.pubads());
         
         googletag.pubads().disableInitialLoad();
         googletag.enableServices();
@@ -36,6 +37,7 @@ export default function Agri() {
           googletag.display("AGRI_WIDEBOARD_1");
           googletag.display("AGRI_WIDEBOARD_2");
           googletag.display("AGRI_HALFPAGE_1");
+          googletag.display("AGRI_RECTANGLE_1");
           googletag.pubads().refresh();
         }, 100);
           
@@ -128,6 +130,9 @@ export default function Agri() {
           id="AGRI_WIDEBOARD_2"
           className="adslot adslot__agri wideboard"
         ></div>
+        <Columns>
+          <div id="AGRI_RECTANGLE_1" className="adslot rectangle"></div>
+        </Columns>
         <Columns></Columns>
       </section>
       <aside>
