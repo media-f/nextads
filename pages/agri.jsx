@@ -2,6 +2,7 @@ import Script from "next/script";
 import Link from 'next/link';
 import { useEffect } from "react";
 import Columns from "../components/columns";
+import Menu from "../components/Menu";
 
 export default function Agri() {
   useEffect(() => {
@@ -65,6 +66,9 @@ export default function Agri() {
           id="AGRI_WIDEBOARD_1"
           className="adslot adslot__agri wideboard"
         ></div>
+
+
+        <Menu></Menu>  
 
         <h1>Journal Agri</h1>
         <Link href="/agri-page"> Page article Agri</Link>

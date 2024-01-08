@@ -1,6 +1,7 @@
 import Columns from '../components/columns'
 import Script from 'next/script'
 import { useEffect } from 'react'
+import Menu from "../components/Menu";
 
 export default function Home() {
 
@@ -19,6 +20,8 @@ export default function Home() {
     return <>
 
     <h1>Home</h1>
+
+    <Menu></Menu>
 
     <div className="adslot wideboard" id="adnz_wideboard_1"></div>
 

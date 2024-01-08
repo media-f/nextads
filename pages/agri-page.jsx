@@ -2,6 +2,7 @@ import Script from "next/script";
 import Link from "next/link";
 import { useEffect } from "react";
 import Columns from "../components/columns";
+import Menu from "../components/Menu";
 
 export default function Agri() {
   useEffect(() => {
@@ -59,6 +60,9 @@ export default function Agri() {
         ></div>
 
         <h1>Journal Agri</h1>
+
+        <Menu></Menu>
+
 
         <div className="imgplaceholder"></div>
         <h2>Page article</h2>

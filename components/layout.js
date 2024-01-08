@@ -7,11 +7,7 @@ export default function Layout({ children }) {
       <>
         
         <main className="container">
-
-          <Menu></Menu>  
-              
           {children}
-        
         </main>
 
         <Script

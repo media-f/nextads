@@ -1,6 +1,7 @@
 import Columns from "../components/columns";
 import { useEffect } from "react";
 import Script from "next/script";
+import Menu from "../components/Menu";
 
 export default function Native() {
   useEffect(() => {
@@ -26,6 +27,8 @@ export default function Native() {
     <>
       <section>
         <h1>Native</h1>
+
+        <Menu></Menu>
 
         <Columns></Columns>
 

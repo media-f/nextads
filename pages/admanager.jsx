@@ -1,6 +1,7 @@
 import Script from "next/script";
 import { useEffect } from "react";
 import Columns from "../components/columns";
+import Menu from "../components/Menu";
 
 export default function AdManager() {
   useEffect(() => {
@@ -46,6 +47,8 @@ export default function AdManager() {
     <>
       <section>
         <h1>Google Admanager</h1>
+
+        <Menu></Menu>
 
         <div id="lg_wideboard_1" className="adslot wideboard"></div>
 

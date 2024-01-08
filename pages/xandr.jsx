@@ -1,5 +1,6 @@
 import Columns from "../components/columns";
 import { useEffect } from "react";
+import Menu from "../components/Menu";
 
 export default function Xandr() {
   useEffect(() => {
@@ -10,6 +11,8 @@ export default function Xandr() {
     <>
       <section>
         <h1>Xandr</h1>
+
+        <Menu></Menu>
 
         <div>
           <div id="adnz_wideboard_1" className="adslot wideboard"></div>
