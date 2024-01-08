@@ -60,7 +60,7 @@ export default function Agri() {
   return (
     <>
       <section>
-        <h3>Wideboard 1</h3>
+        <h3>AGRI_WIDEBOARD_1</h3>
         <div
           id="AGRI_WIDEBOARD_1"
           className="adslot adslot__agri wideboard"
@@ -69,29 +69,31 @@ export default function Agri() {
         <h1>Journal Agri</h1>
         <Link href="/agri-page"> Page article Agri</Link>
         <Columns>
+          <h3>AGRI_RECTANGLE_1</h3>
           <div id="AGRI_RECTANGLE_1" className="adslot rectangle"></div>
         </Columns>
         <Columns></Columns>
 
-        <h3>Wideboard 2</h3>
+        <h3>AGRI_WIDEBOARD_2</h3>
         <div
           id="AGRI_WIDEBOARD_2"
           className="adslot adslot__agri wideboard"
         ></div>
         <Columns></Columns>
 
-        <h3>Wideboard 3</h3>
+        <h3>AGRI_WIDEBOARD_3</h3>
         <div
           id="AGRI_WIDEBOARD_3"
           className="adslot adslot__agri wideboard"
         ></div>
 
         <Columns>
+        <h3>AGRI_RECTANGLE_2</h3>
           <div id="AGRI_RECTANGLE_2" className="adslot rectangle"></div>
         </Columns>
         <Columns></Columns>
 
-        <h3>Wideboard 4</h3>
+        <h3>AGRI_WIDEBOARD_4</h3>
         <div
           id="AGRI_WIDEBOARD_4"
           className="adslot adslot__agri wideboard"
@@ -101,7 +103,7 @@ export default function Agri() {
 
       </section>
       <aside>
-        <h3>Halfpage (sticky)</h3>
+        <h3>AGRI_HALFPAGE_1</h3>
         <div
           id="AGRI_HALFPAGE_1"
           className="adslot adslot__agri halfpage"

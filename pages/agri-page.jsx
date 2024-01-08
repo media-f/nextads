@@ -52,7 +52,7 @@ export default function Agri() {
   return (
     <>
       <section>
-        <h3>Wideboard 1</h3>
+        <h3>AGRI_WIDEBOARD_1</h3>
         <div
           id="AGRI_WIDEBOARD_1"
           className="adslot adslot__agri wideboard"
@@ -125,18 +125,19 @@ export default function Agri() {
 
         <Link href="/agri"> retour home Agri</Link>
 
-        <h3>Wideboard 2</h3>
+        <h3>AGRI_WIDEBOARD_2</h3>
         <div
           id="AGRI_WIDEBOARD_2"
           className="adslot adslot__agri wideboard"
         ></div>
         <Columns>
+        <h3>AGRI_RECTANGLE_1</h3>
           <div id="AGRI_RECTANGLE_1" className="adslot rectangle"></div>
         </Columns>
         <Columns></Columns>
       </section>
       <aside>
-        <h3>Halfpage (sticky)</h3>
+        <h3>AGRI_HALFPAGE_1</h3>
         <div
           id="AGRI_HALFPAGE_1"
           className="adslot adslot__agri halfpage"
