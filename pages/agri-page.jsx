@@ -132,7 +132,7 @@ export default function Agri() {
         ></div>
         <Columns>
         <h3>AGRI_RECTANGLE_1</h3>
-          <div id="AGRI_RECTANGLE_1" className="adslot rectangle"></div>
+          <div id="AGRI_RECTANGLE_1" className="adslot adslot__agri rectangle"></div>
         </Columns>
         <Columns></Columns>
       </section>
