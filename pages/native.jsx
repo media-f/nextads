@@ -1,7 +1,7 @@
 import Columns from "../components/columns";
 import { useEffect } from "react";
 import Script from "next/script";
-import Menu from "../components/Menu";
+import Menu from "../components/menu";
 
 export default function Native() {
   useEffect(() => {

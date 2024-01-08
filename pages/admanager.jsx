@@ -1,7 +1,7 @@
 import Script from "next/script";
 import { useEffect } from "react";
 import Columns from "../components/columns";
-import Menu from "../components/Menu";
+import Menu from "../components/menu";
 
 export default function AdManager() {
   useEffect(() => {

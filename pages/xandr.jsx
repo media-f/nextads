@@ -1,6 +1,6 @@
 import Columns from "../components/columns";
 import { useEffect } from "react";
-import Menu from "../components/Menu";
+import Menu from "../components/menu";
 
 export default function Xandr() {
   useEffect(() => {
