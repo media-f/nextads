@@ -6,11 +6,12 @@
     }
 }
 
-nav {
+.container nav {
     background: #222;
     color: #fff;
     padding: 1rem 0;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 2;
     margin: 1rem 0;
   }
@@ -81,6 +82,7 @@ nav:before {
 
 aside {
     display: none;
+    z-index: 2;
 }
 
 @media (min-width: 1750px) {
