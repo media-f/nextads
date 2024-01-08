@@ -6,6 +6,41 @@
     }
 }
 
+nav {
+    background: #222;
+    color: #fff;
+    padding: 1rem 0;
+    position: relative;
+    z-index: 2;
+    margin: 1rem 0;
+  }
+  
+nav:before {
+    background: #dadada;
+    content: "";
+    display: flex;
+    height: 100%;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    position: absolute;
+    right: 50%;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+  }
+
+  nav ul li {
+    display: inline-block;
+    padding: 0;
+    margin: 0 1rem;
+  }
+
+  nav ul li a{
+    color: black;
+  }
+
 .container h1 {
     margin: 2rem 0 1rem;
 }
