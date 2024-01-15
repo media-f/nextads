@@ -1,0 +1,278 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>native</title>
+    <style>
+        html,
+        body {
+        font-family: Helvetica, Arial, sans-serif;
+        }
+
+        * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        }
+
+        body {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        margin: 0;
+        background: transparent;
+        }
+        .mf-native-block a {
+        text-decoration:none;
+        }
+        .mf-native-block {
+            background-color: #e8edf3;
+            padding: 10px;
+            max-width: 100%;
+            box-sizing: border-box;
+            border-bottom: 4px solid #2b5a90;
+        }
+
+
+        .mf-native-textbox:before {
+            content: "PUBLICITÉ";
+            display: inline-block;
+            color: #fff;
+            background-color: #2b5a90;
+            padding: 6px 4px;
+            text-transform: lowercase;
+            font-size: 13px;
+            font-weight: 400;
+            z-index: 2;
+            line-height: 11px;
+        }
+        .mf-native-textbox {
+            overflow: hidden;
+            width: 100%;
+            margin-bottom:10px;
+        }
+        .mf-native-title {
+            color: #111;
+            font-weight: 600;
+            font-size: 16.5px;
+            line-height: 19.8px;
+            margin: 10px 0 8.25px;
+        }
+        .mf-native-readmore {
+        color: #333;
+        }
+        .mf-item:hover .native-readmore {
+        color: #2b5a90;
+        }
+        .mf-native-imgbox {
+            margin-bottom: 10px;
+        }
+        .mf-native-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+        html {
+            overflow: hidden;
+        }
+
+        .mf-native-grid {
+            display: grid;
+
+            grid-template-columns: repeat( 1 , 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 15px;
+        }
+
+        .mf-native-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mf-native-readmore {
+            font-size: 90%;
+        }
+
+        .mf-native-imgbox {
+            position: relative;
+            margin-bottom: 10px;
+            display: flex;
+
+        }
+
+        .play_button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .play_icon {
+            width: 20%;
+            background: #0c0103a6;
+            aspect-ratio: 1;
+            padding: 6%;
+            border: solid 1px #ffffffb8;
+            border-radius: 5px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 1px 1px 40px #ffffff80;
+        }
+        .play_icon svg{
+            fill: #fff;
+        }
+
+        .nb-3-1 .mf-native-item {
+            flex-direction: row;
+        }
+
+        .nb-3-1 .mf-native-imgbox {
+            flex: 1;
+        }
+
+        .nb-3-1 .mf-native-textbox {
+            flex: 2;
+            margin-left: 10px;
+            align-self: center;
+        }
+
+        .mf-native-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: 768px) {
+            .mf-native-grid {
+                grid-template-columns: auto;
+                grid-row-gap: 20px;
+            }
+
+            .mf-native-item {
+                flex-direction: row;
+            }
+
+            .mf-native-imgbox {
+                flex: 1;
+            }
+
+            .mf-native-textbox {
+                flex: 2;
+                margin-left: 10px;
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+            .nb-3-1 .mf-native-item {
+                flex-direction: column;
+            }
+            .mf-native-imgbox {
+                flex: 2;
+            }
+        }
+
+    /* custom css : */
+
+    @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Urbanist:wght@700&display=swap');
+
+    .mf-native-block {
+        background-color: #e3e9f1;
+        padding: 0;
+        max-width: 100%;
+        border: none;
+    }
+
+    .mf-native-textbox:before {
+        content: "PUBLICITÉ";
+        display: inline-block;
+        color: #111;
+        background-color: #fff;
+        padding: 3px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 700;
+        z-index: 2;
+        line-height: 16px;
+        letter-spacing: 0.65px;
+    }
+
+    .mf-native-title {
+        font-family: "Urbanist", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        color: #111;
+        font-weight: 700;
+        font-size: 23px;
+        line-height: 26px;
+        margin: 10px 0px;
+    }
+
+    .mf-native-image {
+        width: 100%;
+        aspect-ratio: 30/19;
+        object-fit: cover;
+    }
+
+    .nb-3-1 .mf-native-textbox {
+        margin: 0 0 20px;
+        padding: 0 10px;
+    }
+    
+        
+    </style>
+    <script>
+        (() => {
+            var e = function() {
+                    var e = document.documentElement.getBoundingClientRect().height;
+                    parent.postMessage({
+                        height: e
+                    }, parent.location)
+                },
+                n = new ResizeObserver((function(n) {
+                    return e()
+                }));
+            addEventListener("DOMContentLoaded", (function() {
+                e(), n.observe(document.body)
+            })), addEventListener("resize", (function() {
+                e()
+            })), addEventListener("load", (function() {
+                e()
+            }))
+        })();
+    </script>
+
+</head>
+
+<body>
+        <div class="mf-native-block">
+        <div class="mf-native-container">
+            <div class="mf-native-grid">
+                                                <div class="nbitems nb-3-1">
+                    <a target="_top" href="https://native.pubonline.ch/creative/click/OC03Ny03Ny04NA" class="mf-native-item">
+                        <div class="mf-native-imgbox">
+                            <img class="mf-native-image" src="https://native.pubonline.ch/storage/images/1703237055.jpg" alt="Emploi : retrouvez toutes les offres parues dans La Liberté">
+                                                    </div>
+                        <div class="mf-native-textbox">
+                            <div class="mf-native-title">Emploi : retrouvez toutes les offres parues dans La Liberté</div>
+                            <div class="mf-native-readmore">En savoir plus</div>
+                        </div>
+                    </a>
+                </div>
+                            </div>
+            
+        </div>
+    </div>
+    
+    
+
+
+</body></html>
