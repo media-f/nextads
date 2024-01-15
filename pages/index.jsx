@@ -19,29 +19,35 @@ export default function Home() {
 
     return <>
 
-    <h1>Home</h1>
+    <section>
+        <h1>Home</h1>
 
-    <Menu></Menu>
+        <Menu></Menu>
 
-    <div className="adslot wideboard" id="adnz_wideboard_1"></div>
+        <div className="adslot wideboard" id="adnz_wideboard_1"></div>
 
-    <Columns></Columns>
+        <Columns></Columns>
 
-    <div data-placement="qbU0VKDGyS" data-items="3"></div>
+        <div data-placement="qbU0VKDGyS" data-items="3"></div>
+            
+        <Columns></Columns>
+
+        <Columns><div data-placement="qbU0VKDGyS" data-items="1"></div></Columns>
         
-    <Columns></Columns>
+        <Columns></Columns>
+        
+        <div id='lg_wideboard_1' className="adslot wideboard"></div>
 
-    <Columns><div data-placement="qbU0VKDGyS" data-items="1"></div></Columns>
-     
-    <Columns></Columns>
-    
-    <div id='lg_wideboard_1' className="adslot wideboard"></div>
+        <Columns></Columns>
 
-    <Columns></Columns>
+        <Columns><div className="adslot rectangle" id="adnz_rectangle_1"></div></Columns>
 
-    <Columns><div className="adslot rectangle" id="adnz_rectangle_1"></div></Columns>
+    </section>
 
-    <div className='adslot halfpage' id="adnz_halfpage_1"></div>
+
+    <aside>
+        <div className='adslot halfpage' id="adnz_halfpage_1"></div>
+    </aside>
    
     
     <Script
