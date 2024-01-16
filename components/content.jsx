@@ -740,7 +740,7 @@ export default function Content(props) {
                     <img
                     alt=""
                     loading="lazy"
-                    src="https://picsum.photos/600/400?random=3"
+                    src="https://picsum.photos/600/400?random="
                     style={{
                         position: "absolute",
                         height: "214px",
