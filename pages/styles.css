@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Flow+Block&display=swap');
 
+@font-face {
+    font-family: GT Ultra Median;
+    src: url(/fonts/la-liberte/gt-ultra/GT-Ultra-Median-Bold.woff2)
+        format("woff2"),
+      url(/fonts/la-liberte/gt-ultra/GT-Ultra-Median-Bold.woff) format("woff"),
+      url(/fonts/la-liberte/gt-ultra/GT-Ultra-Median-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+
 @media (min-width: 1200px) {
     body .container {
         max-width: 994px;
