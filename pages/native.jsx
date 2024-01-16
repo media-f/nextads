@@ -2,6 +2,7 @@ import Columns from "../components/columns";
 import { useEffect } from "react";
 import Script from "next/script";
 import Menu from "../components/menu";
+import Content from "../components/content";
 
 export default function Native() {
   useEffect(() => {
@@ -121,11 +122,7 @@ export default function Native() {
                       <img
                         alt=""
                         loading="lazy"
-                        decoding="async"
-                        data-nimg="fill"
-                        sizes="(min-width: 1536px) 336px, (min-width: 1024px) 22.2vw, (min-width: 640px) 33.3vw, 100vw"
-                        srcSet="https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=256&amp;fit=max 256w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=384&amp;fit=max 384w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=640&amp;fit=max 640w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=750&amp;fit=max 750w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=828&amp;fit=max 828w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=1080&amp;fit=max 1080w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=1200&amp;fit=max 1200w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=1920&amp;fit=max 1920w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=2048&amp;fit=max 2048w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=3840&amp;fit=max 3840w"
-                        src="https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=3840&amp;fit=max"
+                        src="https://picsum.photos/600/400"
                         style={{
                           position: "absolute",
                           height: "214px",
@@ -366,8 +363,7 @@ export default function Native() {
                           decoding="async"
                           data-nimg="fill"
                           sizes="104px"
-                          srcSet="https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=16&amp;fit=max 16w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=32&amp;fit=max 32w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=48&amp;fit=max 48w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=64&amp;fit=max 64w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=96&amp;fit=max 96w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=128&amp;fit=max 128w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=256&amp;fit=max 256w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=384&amp;fit=max 384w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=640&amp;fit=max 640w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=750&amp;fit=max 750w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=828&amp;fit=max 828w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=1080&amp;fit=max 1080w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=1200&amp;fit=max 1200w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=1920&amp;fit=max 1920w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=2048&amp;fit=max 2048w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=3840&amp;fit=max 3840w"
-                          src="https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=3840&amp;fit=max"
+                          src="https://picsum.photos/600/400"
                           style={{
                             position: "absolute",
                             height: "100%",
@@ -461,9 +457,8 @@ export default function Native() {
                         loading="lazy"
                         decoding="async"
                         data-nimg="fill"
-                        sizes="(min-width: 1536px) 336px, (min-width: 1024px) 22.2vw, (min-width: 640px) 33.3vw, 100vw"
-                        srcSet="https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=256&amp;fit=max 256w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=384&amp;fit=max 384w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=640&amp;fit=max 640w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=750&amp;fit=max 750w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=828&amp;fit=max 828w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=1080&amp;fit=max 1080w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=1200&amp;fit=max 1200w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=1920&amp;fit=max 1920w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=2048&amp;fit=max 2048w, https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=3840&amp;fit=max 3840w"
-                        src="https://dev-media-st-paul-tramway.imgix.net/dev/LL/2023/12/592867505_highres_4e52da9962.jpg?auto=format%2Ccompress&amp;w=3840&amp;fit=max"
+                        src="https://picsum.photos/600/400"
+                        
                         style={{
                           position: "absolute",
                           height: "214px",
@@ -739,13 +734,15 @@ export default function Native() {
         </div>
 
         <Columns></Columns>
+        <Content></Content>
+
         <h3>1 item</h3>
         <div data-placement="g5g7csql" data-items="1"></div>
 
         <Columns></Columns>
 
         <Columns></Columns>
-        <h3>3 items</h3>
+        <h3>2-3 items</h3>
         <div data-placement="qbU0VKDGyS" data-items="3"></div>
 
         <Columns>

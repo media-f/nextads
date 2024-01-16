@@ -79,9 +79,16 @@ nav:before {
 
 .imgplaceholder {
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 3/2;
     background: rgb(0,212,255);
     background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(204,204,204,1) 100%);
+}
+
+.category {
+    align-items: center;
+    display: flex;
+    margin: 15px 0px 8px;
+    box-sizing: border-box;
 }
 
 aside {
