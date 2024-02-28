@@ -752,7 +752,13 @@ export default function Native() {
 
         <Columns></Columns>
 
+        <h3>2-3 items</h3>
         <div data-placement="qbU0VKDGyS" data-items="3"></div>
+
+        <h3>2-3 items</h3>
+        <div data-placement="qbU0VKDGyS" data-items="3"></div>
+
+        
       </section>
 
       <aside>
