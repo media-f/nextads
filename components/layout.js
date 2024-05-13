@@ -14,7 +14,9 @@ export default function Layout({ children }) {
         </main>
 
         <Script
-          src="https://adnz.co/header.js?adTagId=279"
+          data-cmp-src="https://adnz.co/header.js?adTagId=279"
+          className="cmplazyload"
+          data-cmp-vendor="1490" 
           strategy="lazyOnload"
           onLoad={() =>
               window.audienzz.refreshAds()
