@@ -23,7 +23,7 @@ export default function Layout({ children }) {
           }
         />
         <Script
-          src="https://native.pubonline.ch/nativeads.js"
+          data-cmp-src="https://native.pubonline.ch/nativeads.js"
           className="cmplazyload"
           data-cmp-vendor="c53197"
           strategy="lazyOnload"
