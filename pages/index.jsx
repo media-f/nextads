@@ -49,14 +49,7 @@ export default function Home() {
         <div className='adslot halfpage' id="adnz_halfpage_1"></div>
     </aside>
    
-    <Script
-        id="consentmanager-script" 
-        data-cmp-ab="1" 
-        src="https://cdn.consentmanager.net/delivery/autoblocking/12a1afa951066.js" 
-        data-cmp-host="b.delivery.consentmanager.net"
-        data-cmp-cdn="cdn.consentmanager.net" 
-        data-cmp-codesrc="0"
-     />
+   
     
     <Script
         id="admanager-script"
