@@ -10,12 +10,12 @@ export default function Layout({ children }) {
        <Script
             id="consentmanager-script" 
             data-cmp-ab="1" 
-            src="https://cdn.consentmanager.net/delivery/autoblocking/12a1afa951066.js" 
-            data-cmp-host="b.delivery.consentmanager.net"
+            src="https://cdn.consentmanager.net/delivery/autoblocking/2907bf3042f6f.js" 
+            data-cmp-host="a.delivery.consentmanager.net"
             data-cmp-cdn="cdn.consentmanager.net" 
             data-cmp-codesrc="0"
         />
-        
+
         <GoogleTagManager gtmId="GTM-NX3V39QK" />
         
         <main className="container">
