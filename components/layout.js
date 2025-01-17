@@ -13,14 +13,7 @@ export default function Layout({ children }) {
           {children}
         </main>
 
-        <Script
-            id="consentmanager-script" 
-            data-cmp-ab="1" 
-            src="https://cdn.consentmanager.net/delivery/autoblocking/12a1afa951066.js" 
-            data-cmp-host="b.delivery.consentmanager.net"
-            data-cmp-cdn="cdn.consentmanager.net" 
-            data-cmp-codesrc="0"
-        />
+       
 
         
         <Script
