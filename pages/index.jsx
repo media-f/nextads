@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Columns from '../components/columns'
 import Script from 'next/script'
 import { useEffect } from 'react'
@@ -19,12 +18,6 @@ export default function Home() {
       })
 
     return <>
-
-        <Head>
-                <title>Nextads</title>
-                <meta name="description" content="Next sandbox for ads" />
-                <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/12a1afa951066.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="0"></script>
-        </Head>
 
     <section>
         <h1>Home</h1>
@@ -56,6 +49,14 @@ export default function Home() {
         <div className='adslot halfpage' id="adnz_halfpage_1"></div>
     </aside>
    
+    <Script
+        id="consentmanager-script" 
+        data-cmp-ab="1" 
+        src="https://cdn.consentmanager.net/delivery/autoblocking/12a1afa951066.js" 
+        data-cmp-host="b.delivery.consentmanager.net"
+        data-cmp-cdn="cdn.consentmanager.net" 
+        data-cmp-codesrc="0"
+     />
     
     <Script
         id="admanager-script"
