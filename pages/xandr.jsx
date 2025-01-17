@@ -1,10 +1,12 @@
 import Columns from "../components/columns";
 import { useEffect } from "react";
 import Menu from "../components/menu";
+import Script from "next/script";
 
 export default function Xandr() {
   useEffect(() => {
     if (window.pubonline) window.pubonline.loadAds();
+    if(window.htag) window.htag.api('1').refreshAds()
   }, []);
 
   return (
@@ -42,6 +44,11 @@ export default function Xandr() {
       <aside>
         <div className="adslot halfpage" id="adnz_halfpage_1"></div>
       </aside>
+
+      <Script
+          data-cmp-src="https://adnz.co/header.js?adTagId=279"
+          strategy="lazyOnload"
+        />
     </>
   );
 }

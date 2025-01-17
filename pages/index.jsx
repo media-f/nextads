@@ -7,6 +7,7 @@ export default function Home() {
 
     useEffect(() => {
         if(window.pubonline) window.pubonline.loadAds()
+        if(window.htag) window.htag.api('1').refreshAds()
         setTimeout(() => {
             const { googletag } = window
             googletag.cmd.push(() => {
@@ -77,6 +78,11 @@ export default function Home() {
         })
         
     `}</Script>
+
+    <Script
+          data-cmp-src="https://adnz.co/header.js?adTagId=279"
+          strategy="lazyOnload"
+        />
     
     </>
 }
