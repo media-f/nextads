@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 export default function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
-      if(window.audienzz) window.audienzz.refreshAds()
+      if(window.htag) window.htag.api('1').refreshAds()
   })
 
   return (

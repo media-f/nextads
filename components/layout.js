@@ -27,9 +27,6 @@ export default function Layout({ children }) {
           className="cmplazyload"
           data-cmp-vendor="783" 
           strategy="lazyOnload"
-          onLoad={() =>
-              window.audienzz.refreshAds()
-          }
         />
         <Script
           data-cmp-src="https://native.pubonline.ch/nativeads.js"
