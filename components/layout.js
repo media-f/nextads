@@ -26,7 +26,7 @@ export default function Layout({ children }) {
 
         
         <Script
-          data-cmp-src="https://native.pubonline.ch/nativeads.js"
+          src="https://native.pubonline.ch/nativeads.js"
           strategy="lazyOnload"
           onLoad={() =>
               window.pubonline.loadAds()

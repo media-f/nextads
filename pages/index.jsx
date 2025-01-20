@@ -80,7 +80,7 @@ export default function Home() {
     `}</Script>
 
     <Script
-          data-cmp-src="https://adnz.co/header.js?adTagId=279"
+          src="https://adnz.co/header.js?adTagId=279"
           strategy="lazyOnload"
         />
     
