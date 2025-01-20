@@ -33,15 +33,8 @@ export default function Native() {
 
         <Columns />
 
-        <blockquote className="tiktok-embed" cite="https://www.tiktok.com/@bayashi.tiktok/video/7377663484575616257" data-video-id="7377663484575616257" style={{ maxWidth: "605px", minWidth: "325px" }}>
-          <section>
-            <a target="_blank" rel="noopener noreferrer" title="@bayashi.tiktok" href="https://www.tiktok.com/@bayashi.tiktok?refer=embed">@bayashi.tiktok</a>
-            <a title="tiktokfood" target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/tag/tiktokfood?refer=embed">#tiktokfood</a>
-            <a title="asmr" target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/tag/asmr?refer=embed">#asmr</a>
-            <a target="_blank" rel="noopener noreferrer" title="♬ オリジナル楽曲  - バヤシ🥑Bayashi" href="https://www.tiktok.com/music/オリジナル楽曲-バヤシ🥑Bayashi-7377663521633749776?refer=embed">♬ オリジナル楽曲  - バヤシ🥑Bayashi</a>
-          </section>
-        </blockquote>
-        <Script async src="https://www.tiktok.com/embed.js"></Script>
+
+        <iframe height="300" width= "400" src="https://www.tiktok.com/player/v1/7377663484575616257?&music_info=1&description=1" allow="fullscreen" title="test"></iframe>
 
         <h3>1 item</h3>
         <div data-placement="qbU0VKDGyS" data-items="1"></div>
