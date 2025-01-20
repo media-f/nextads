@@ -34,7 +34,14 @@ export default function Native() {
         <Columns></Columns>
 
 
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@bayashi.tiktok/video/7417752854972140807" data-video-id="7417752854972140807" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@bayashi.tiktok" href="https://www.tiktok.com/@bayashi.tiktok?refer=embed">@bayashi.tiktok</a> <a title="tiktokfood" target="_blank" href="https://www.tiktok.com/tag/tiktokfood?refer=embed">#tiktokfood</a> <a title="asmr" target="_blank" href="https://www.tiktok.com/tag/asmr?refer=embed">#asmr</a></section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+        <blockquote className="tiktok-embed" cite="https://www.tiktok.com/@bayashi.tiktok/video/7417752854972140807" data-video-id="7417752854972140807" style={{ maxWidth: "605px", minWidth: "325px" }}>
+          <section>
+            <a target="_blank" title="@bayashi.tiktok" href="https://www.tiktok.com/@bayashi.tiktok?refer=embed">@bayashi.tiktok</a>
+            <a title="tiktokfood" target="_blank" href="https://www.tiktok.com/tag/tiktokfood?refer=embed">#tiktokfood</a>
+            <a title="asmr" target="_blank" href="https://www.tiktok.com/tag/asmr?refer=embed">#asmr</a>
+          </section>
+        </blockquote>
+        <Script async src="https://www.tiktok.com/embed.js"></Script>
 
 
         <Content></Content>
