@@ -18,7 +18,6 @@ export default function LG() {
       { name: 'wideboard_2' },
       { name: 'wideboard_3' },
       { name: 'wideboard_4' },
-      { name: 'wideboard_5' },
       { name: 'rectangle_1' },
       { name: 'rectangle_2' },
       { name: 'halfpage_1', sizes: [[300, 600]] },
@@ -39,7 +38,6 @@ export default function LG() {
     const destroySlots = () => {
       if (window.googletag?.destroySlots) {
         window.googletag.destroySlots();
-        console.log(`[GPT] Destroyed ad slots for ${prefix}`);
       }
     };
 
@@ -52,7 +50,6 @@ export default function LG() {
         const id = makeId(name);
         const element = document.getElementById(id);
         if (!element) {
-          console.log(`[GPT] Skipping undefined ad slot: ${id}`);
           return;
         }
 
@@ -69,7 +66,6 @@ export default function LG() {
           const element = document.getElementById(id);
           if (element) {
             googletag.display(id);
-            console.log(`[GPT] Displayed slot: ${id}`);
           }
         });
         pubads.refresh();
