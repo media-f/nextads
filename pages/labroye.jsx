@@ -117,7 +117,7 @@ export default function LG() {
 
       <Script
         id="admanager-script"
-        src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+        src="https://pagead2.googlesyndication.com/tag/js/gpt.js"
         strategy="lazyOnload"
       />
       

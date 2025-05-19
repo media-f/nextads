@@ -47,7 +47,7 @@ export default function Native() {
         <div data-placement="llhome2024" data-items="3"></div>
 
         <Columns>
-          <Adslot prefix="lg" name="rectangle_1" />
+          
         </Columns>
 
         <Columns />
@@ -60,7 +60,7 @@ export default function Native() {
       </section>
 
       <aside>
-        <Adslot prefix="lg" name="halfpage_1" />
+        
       </aside>
     </>
   );
