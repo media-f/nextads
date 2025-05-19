@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Script from "next/script";
 import Menu from "../components/menu";
 import Content from "../components/content";
+import Adslot from "../components/adslot";
 
 export default function Native() {
   useEffect(() => {
@@ -46,7 +47,7 @@ export default function Native() {
         <div data-placement="llhome2024" data-items="3"></div>
 
         <Columns>
-          <div className="adslot rectangle" id="lg_rectangle_1"></div>
+          <Adslot prefix="lg" name="rectangle_1" />
         </Columns>
 
         <Columns />
@@ -59,7 +60,7 @@ export default function Native() {
       </section>
 
       <aside>
-        <div className="adslot halfpage" id="lg_halfpage_1"></div>
+        <Adslot prefix="lg" name="halfpage_1" />
       </aside>
     </>
   );

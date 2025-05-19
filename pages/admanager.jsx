@@ -2,6 +2,7 @@ import Script from "next/script";
 import { useEffect } from "react";
 import Columns from "../components/columns";
 import Menu from "../components/menu";
+import Adslot from "../components/adslot";
 
 export default function AdManager() {
   useEffect(() => {
@@ -50,23 +51,23 @@ export default function AdManager() {
 
         <Menu></Menu>
 
-        <div id="lg_wideboard_1" className="adslot wideboard"></div>
+        <Adslot prefix="lg" name="wideboard_1" />
 
         <Columns></Columns>
 
         <Columns>
-          <div id="lg_rectangle_1" className="adslot rectangle"></div>
+          <Adslot prefix="lg" name="rectangle_1" />
         </Columns>
 
         <Columns></Columns>
 
-        <div id="lg_wideboard_2" className="adslot wideboard"></div>
+        <Adslot prefix="lg" name="wideboard_2" />
 
         <Columns></Columns>
       </section>
 
       <aside>
-        <div id="lg_halfpage_1" className="adslot halfpage"></div>
+        <Adslot prefix="lg" name="halfpage_1" />
       </aside>
 
       <Script

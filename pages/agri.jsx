@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useEffect } from "react";
 import Columns from "../components/columns";
 import Menu from "../components/menu";
+import Adslot from "../components/adslot";
 
 export default function Agri() {
   useEffect(() => {
@@ -61,11 +62,9 @@ export default function Agri() {
   return (
     <>
       <section>
-        <h3>AGRI_WIDEBOARD_1</h3>
-        <div
-          id="AGRI_WIDEBOARD_1"
-          className="adslot adslot__agri wideboard"
-        ></div>
+        <Adslot prefix="AGRI" name="WIDEBOARD_1">
+          <h3>AGRI_WIDEBOARD_1</h3>
+        </Adslot>
 
 
         <Menu></Menu>  
@@ -73,45 +72,39 @@ export default function Agri() {
         <h1>Journal Agri</h1>
         <Link href="/agri-page"> Page article Agri</Link>
         <Columns>
-          <h3>AGRI_RECTANGLE_1</h3>
-          <div id="AGRI_RECTANGLE_1" className="adslot adslot__agri rectangle"></div>
+          <Adslot prefix="AGRI" name="RECTANGLE_1">
+            <h3>AGRI_RECTANGLE_1</h3>
+          </Adslot>
         </Columns>
         <Columns></Columns>
 
-        <h3>AGRI_WIDEBOARD_2</h3>
-        <div
-          id="AGRI_WIDEBOARD_2"
-          className="adslot adslot__agri wideboard"
-        ></div>
+        <Adslot prefix="AGRI" name="WIDEBOARD_2">
+          <h3>AGRI_WIDEBOARD_2</h3>
+        </Adslot>
         <Columns></Columns>
 
-        <h3>AGRI_WIDEBOARD_3</h3>
-        <div
-          id="AGRI_WIDEBOARD_3"
-          className="adslot adslot__agri wideboard"
-        ></div>
+        <Adslot prefix="AGRI" name="WIDEBOARD_3">
+          <h3>AGRI_WIDEBOARD_3</h3>
+        </Adslot>
 
         <Columns>
-        <h3>AGRI_RECTANGLE_2</h3>
-          <div id="AGRI_RECTANGLE_2" className="adslot adslot__agri rectangle"></div>
+        <Adslot prefix="AGRI" name="RECTANGLE_2">
+          <h3>AGRI_RECTANGLE_2</h3>
+        </Adslot>
         </Columns>
         <Columns></Columns>
 
-        <h3>AGRI_WIDEBOARD_4</h3>
-        <div
-          id="AGRI_WIDEBOARD_4"
-          className="adslot adslot__agri wideboard"
-        ></div>
+        <Adslot prefix="AGRI" name="WIDEBOARD_4">
+          <h3>AGRI_WIDEBOARD_4</h3>
+        </Adslot>
 
         <Columns></Columns>
 
       </section>
       <aside>
-        <h3>AGRI_HALFPAGE_1</h3>
-        <div
-          id="AGRI_HALFPAGE_1"
-          className="adslot adslot__agri halfpage"
-        ></div>
+        <Adslot prefix="AGRI" name="HALFPAGE_1">
+          <h3>AGRI_HALFPAGE_1</h3>
+        </Adslot>
       </aside>
 
       <Script

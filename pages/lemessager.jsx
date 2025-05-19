@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useEffect } from "react";
 import Columns from "../components/columns";
 import Menu from "../components/menu";
+import Adslot from "../components/adslot";
 
 export default function LG() {
   useEffect(() => {
@@ -61,11 +62,9 @@ export default function LG() {
   return (
     <>
       <section>
-        <h3>LM_wideboard_1</h3>
-        <div
-          id="LM_wideboard_1"
-          className="adslot adslot__LG wideboard"
-        ></div>
+        <Adslot prefix="LM" name="wideboard_1">
+          <h3>LM_wideboard_1</h3>
+        </Adslot>
 
 
         <Menu></Menu>  
@@ -73,45 +72,39 @@ export default function LG() {
         <h1>Le Messager</h1>
         
         <Columns>
-          <h3>LM_rectangle_1</h3>
-          <div id="LM_rectangle_1" className="adslot adslot__LG rectangle"></div>
+          <Adslot prefix="LM" name="rectangle_1">
+            <h3>LM_rectangle_1</h3>
+          </Adslot>
         </Columns>
         <Columns></Columns>
 
-        <h3>LM_wideboard_2</h3>
-        <div
-          id="LM_wideboard_2"
-          className="adslot adslot__LG wideboard"
-        ></div>
+        <Adslot prefix="LM" name="wideboard_2">
+          <h3>LM_wideboard_2</h3>
+        </Adslot>
         <Columns></Columns>
 
-        <h3>LM_wideboard_3</h3>
-        <div
-          id="LM_wideboard_3"
-          className="adslot adslot__LG wideboard"
-        ></div>
+        <Adslot prefix="LM" name="wideboard_3">
+          <h3>LM_wideboard_3</h3>
+        </Adslot>
 
         <Columns>
-        <h3>LM_rectangle_2</h3>
-          <div id="LM_rectangle_2" className="adslot adslot__LG rectangle"></div>
+        <Adslot prefix="LM" name="rectangle_2">
+          <h3>LM_rectangle_2</h3>
+        </Adslot>
         </Columns>
         <Columns></Columns>
 
-        <h3>LM_wideboard_4</h3>
-        <div
-          id="LM_wideboard_4"
-          className="adslot adslot__LG wideboard"
-        ></div>
+        <Adslot prefix="LM" name="wideboard_4">
+          <h3>LM_wideboard_4</h3>
+        </Adslot>
 
         <Columns></Columns>
 
       </section>
       <aside>
-        <h3>LM_halfpage_1</h3>
-        <div
-          id="LM_halfpage_1"
-          className="adslot adslot__LG halfpage"
-        ></div>
+        <Adslot prefix="LM" name="halfpage_1">
+          <h3>LM_halfpage_1</h3>
+        </Adslot>
       </aside>
 
       <Script

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useEffect } from "react";
 import Columns from "../components/columns";
 import Menu from "../components/menu";
+import Adslot from "../components/adslot";
 
 export default function LG() {
   useEffect(() => {
@@ -75,52 +76,43 @@ export default function LG() {
         
         <h1>La Broye</h1>
         <Menu></Menu>  
-        <div
-          id="LB_wideboard_1"
-          className="adslot adslot__LG wideboard"
-        ></div>
+        <Adslot prefix="LB" name="wideboard_1" />
 
         
         <Columns>
-          <h3>LB_rectangle_1</h3>
-          <div id="LB_rectangle_1" className="adslot adslot__LG rectangle"></div>
+          <Adslot prefix="LB" name="rectangle_1">
+            <h3>LB_rectangle_1</h3>
+          </Adslot>
         </Columns>
         <Columns></Columns>
 
-        <h3>LB_wideboard_2</h3>
-        <div
-          id="LB_wideboard_2"
-          className="adslot adslot__LG wideboard"
-        ></div>
+        <Adslot prefix="LB" name="wideboard_2">
+          <h3>LB_wideboard_2</h3>
+        </Adslot>
         <Columns></Columns>
 
-        <h3>LB_wideboard_3</h3>
-        <div
-          id="LB_wideboard_3"
-          className="adslot adslot__LG wideboard"
-        ></div>
+        <Adslot prefix="LB" name="wideboard_3">
+          <h3>LB_wideboard_3</h3>
+        </Adslot>
 
         <Columns>
-        <h3>LB_rectangle_2</h3>
-          <div id="LB_rectangle_2" className="adslot adslot__LG rectangle"></div>
+        <Adslot prefix="LB" name="rectangle_2">
+          <h3>LB_rectangle_2</h3>
+        </Adslot>
         </Columns>
         <Columns></Columns>
 
-        <h3>LB_wideboard_4</h3>
-        <div
-          id="LB_wideboard_4"
-          className="adslot adslot__LG wideboard"
-        ></div>
+        <Adslot prefix="LB" name="wideboard_4">
+          <h3>LB_wideboard_4</h3>
+        </Adslot>
 
         <Columns></Columns>
 
       </section>
       <aside>
-        <h3>LB_halfpage_1</h3>
-        <div
-          id="LB_halfpage_1"
-          className="adslot adslot__LG halfpage"
-        ></div>
+        <Adslot prefix="LB" name="halfpage_1">
+          <h3>LB_halfpage_1</h3>
+        </Adslot>
       </aside>
 
       <Script
