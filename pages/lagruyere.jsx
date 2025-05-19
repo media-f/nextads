@@ -6,19 +6,23 @@ import Menu from "../components/menu";
 
 export default function LG() {
   useEffect(() => {
+    const prefix = "LG"; // Change to "LB" for La Broye
 
-window.googletag = window.googletag || { cmd: [] };
+    window.googletag = window.googletag || { cmd: [] };
+
+    const makeId = (name) => `${prefix}_${name}`;
+    const makePath = (name) => `/95737030/${makeId(name)}`;
 
     const adUnits = [
-      { id: 'LG_wideboard_1', path: '/95737030/LG_wideboard_1' },
-      { id: 'LG_wideboard_2', path: '/95737030/LG_wideboard_2' },
-      { id: 'LG_wideboard_3', path: '/95737030/LG_wideboard_3' },
-      { id: 'LG_wideboard_4', path: '/95737030/LG_wideboard_4' },
-      { id: 'LG_rectangle_1', path: '/95737030/LG_rectangle_1' },
-      { id: 'LG_rectangle_2', path: '/95737030/LG_rectangle_2' },
+      { name: 'wideboard_1' },
+      { name: 'wideboard_2' },
+      { name: 'wideboard_3' },
+      { name: 'wideboard_4' },
+      { name: 'rectangle_1' },
+      { name: 'rectangle_2' },
     ];
 
-    const halfPageSlot = { id: 'LG_halfpage_1', path: '/95737030/LG_halfpage_1' };
+    const halfPage = { name: 'halfpage_1' };
 
     const width = window.innerWidth;
     const wideboardSizes = width > 994
@@ -31,7 +35,7 @@ window.googletag = window.googletag || { cmd: [] };
     const destroySlots = () => {
       if (window.googletag?.destroySlots) {
         window.googletag.destroySlots();
-        console.log('[GPT] Destroyed ad slots');
+        console.log(`[GPT] Destroyed ad slots for ${prefix}`);
       }
     };
 
@@ -40,20 +44,22 @@ window.googletag = window.googletag || { cmd: [] };
 
       const pubads = googletag.pubads();
 
-      adUnits.forEach(({ id, path }) => {
-        const sizes = path.includes('rectangle') ? rectangleSizes : wideboardSizes;
+      adUnits.forEach(({ name }) => {
+        const id = makeId(name);
+        const path = makePath(name);
+        const sizes = name.startsWith('rectangle') ? rectangleSizes : wideboardSizes;
         googletag.defineSlot(path, sizes, id)?.addService(pubads);
       });
 
-      googletag.defineSlot(halfPageSlot.path, halfPageSizes, halfPageSlot.id)?.addService(pubads);
+      googletag.defineSlot(makePath(halfPage.name), halfPageSizes, makeId(halfPage.name))
+        ?.addService(pubads);
 
       pubads.disableInitialLoad();
       googletag.enableServices();
 
-      // Display ads after GPT is ready
       setTimeout(() => {
-        console.log('[GPT] Displaying ads...');
-        adUnits.concat(halfPageSlot).forEach(({ id }) => googletag.display(id));
+        console.log(`[GPT] Displaying ads for prefix ${prefix}`);
+        [...adUnits, halfPage].forEach(({ name }) => googletag.display(makeId(name)));
         pubads.refresh();
       }, 100);
     });
@@ -61,8 +67,8 @@ window.googletag = window.googletag || { cmd: [] };
     return () => {
       destroySlots();
     };
-
   }, []);
+
 
   return (
     <>
