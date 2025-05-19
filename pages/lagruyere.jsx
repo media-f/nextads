@@ -6,7 +6,7 @@ import Menu from "../components/menu";
 
 export default function LG() {
   useEffect(() => {
-    const prefix = "LG"; // Change to "LB" for La Broye
+    const prefix = "LG"; // or "LB" on other site
 
     window.googletag = window.googletag || { cmd: [] };
 
@@ -20,9 +20,8 @@ export default function LG() {
       { name: 'wideboard_4' },
       { name: 'rectangle_1' },
       { name: 'rectangle_2' },
+      { name: 'halfpage_1', sizes: [[300, 600]] },
     ];
-
-    const halfPage = { name: 'halfpage_1' };
 
     const width = window.innerWidth;
     const wideboardSizes = width > 994
@@ -30,7 +29,11 @@ export default function LG() {
       : [[300, 250], [320, 460]];
 
     const rectangleSizes = [[300, 250], [320, 460]];
-    const halfPageSizes = [[300, 600]];
+
+    const getSizes = (name, overrideSizes) => {
+      if (overrideSizes) return overrideSizes;
+      return name.startsWith('rectangle') ? rectangleSizes : wideboardSizes;
+    };
 
     const destroySlots = () => {
       if (window.googletag?.destroySlots) {
@@ -44,22 +47,30 @@ export default function LG() {
 
       const pubads = googletag.pubads();
 
-      adUnits.forEach(({ name }) => {
+      adUnits.forEach(({ name, sizes }) => {
         const id = makeId(name);
-        const path = makePath(name);
-        const sizes = name.startsWith('rectangle') ? rectangleSizes : wideboardSizes;
-        googletag.defineSlot(path, sizes, id)?.addService(pubads);
-      });
+        const element = document.getElementById(id);
+        if (!element) {
+          console.log(`[GPT] Skipping undefined ad slot: ${id}`);
+          return;
+        }
 
-      googletag.defineSlot(makePath(halfPage.name), halfPageSizes, makeId(halfPage.name))
-        ?.addService(pubads);
+        const path = makePath(name);
+        googletag.defineSlot(path, getSizes(name, sizes), id)?.addService(pubads);
+      });
 
       pubads.disableInitialLoad();
       googletag.enableServices();
 
       setTimeout(() => {
-        console.log(`[GPT] Displaying ads for prefix ${prefix}`);
-        [...adUnits, halfPage].forEach(({ name }) => googletag.display(makeId(name)));
+        adUnits.forEach(({ name }) => {
+          const id = makeId(name);
+          const element = document.getElementById(id);
+          if (element) {
+            googletag.display(id);
+            console.log(`[GPT] Displayed slot: ${id}`);
+          }
+        });
         pubads.refresh();
       }, 100);
     });
