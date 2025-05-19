@@ -18,6 +18,7 @@ export default function LG() {
       { name: 'wideboard_2' },
       { name: 'wideboard_3' },
       { name: 'wideboard_4' },
+      { name: 'wideboard_5' },
       { name: 'rectangle_1' },
       { name: 'rectangle_2' },
       { name: 'halfpage_1', sizes: [[300, 600]] },
