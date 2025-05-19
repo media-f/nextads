@@ -81,16 +81,16 @@ export default function LG() {
   return (
     <>
       <section>
-        <h3>LG_wideboard_1</h3>
+        
+
+        <h1>La Gruyère</h1>
+
+        <Menu></Menu>  
+
         <div
           id="LG_wideboard_1"
           className="adslot adslot__LG wideboard"
         ></div>
-
-
-        <Menu></Menu>  
-
-        <h1>La Gruyère</h1>
         
         <Columns>
           <h3>LG_rectangle_1</h3>

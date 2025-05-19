@@ -12,7 +12,7 @@ export default function Xandr() {
   return (
     <>
       <section>
-        <h1>Xandr</h1>
+        <h1>La Liberté - Audienzz</h1>
 
         <Menu></Menu>
 
