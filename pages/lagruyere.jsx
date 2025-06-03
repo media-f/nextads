@@ -49,28 +49,114 @@ export default function LG() {
 
       adUnits.forEach(({ name, sizes }) => {
         const id = makeId(name);
-        const element = document.getElementById(id);
-        if (!element) {
-          return;
-        }
-
         const path = makePath(name);
+        // Define slot regardless of element existence - it will be used when element is ready
         googletag.defineSlot(path, getSizes(name, sizes), id)?.addService(pubads);
       });
 
       pubads.disableInitialLoad();
       googletag.enableServices();
 
-      setTimeout(() => {
+      // Improved approach: use Intersection Observer and DOM ready checks
+      const displayAdsWhenReady = () => {
+        const availableAds = [];
+        const pendingAds = [];
+
+        // Check which ads are already available
         adUnits.forEach(({ name }) => {
           const id = makeId(name);
           const element = document.getElementById(id);
           if (element) {
-            googletag.display(id);
+            availableAds.push(name);
+          } else {
+            pendingAds.push(name);
           }
         });
-        pubads.refresh();
-      }, 100);
+
+        // Display immediately available ads
+        if (availableAds.length > 0) {
+          availableAds.forEach((name) => {
+            const id = makeId(name);
+            googletag.display(id);
+          });
+        }
+
+        // If all ads are ready, refresh and exit
+        if (pendingAds.length === 0) {
+          pubads.refresh();
+          return;
+        }
+
+        // Wait for remaining ads with MutationObserver
+        let observer;
+        let timeoutId;
+        let displayedCount = availableAds.length;
+
+        const checkAndDisplay = () => {
+          pendingAds.forEach((name, index) => {
+            const id = makeId(name);
+            const element = document.getElementById(id);
+            if (element) {
+              googletag.display(id);
+              displayedCount++;
+              pendingAds.splice(index, 1);
+            }
+          });
+
+          // If all ads are now displayed, clean up and refresh
+          if (pendingAds.length === 0) {
+            if (observer) observer.disconnect();
+            if (timeoutId) clearTimeout(timeoutId);
+            pubads.refresh();
+          }
+        };
+
+        observer = new MutationObserver((mutations) => {
+          let shouldCheck = false;
+          mutations.forEach((mutation) => {
+            if (mutation.type === 'childList') {
+              mutation.addedNodes.forEach((node) => {
+                if (node.nodeType === Node.ELEMENT_NODE && 
+                    node.id && 
+                    node.id.startsWith(prefix + '_')) {
+                  shouldCheck = true;
+                }
+              });
+            }
+          });
+
+          if (shouldCheck) {
+            checkAndDisplay();
+          }
+        });
+
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+
+        // Fallback: force display after reasonable timeout
+        timeoutId = setTimeout(() => {
+          if (observer) observer.disconnect();
+          
+          // Display any remaining ads that are now available
+          pendingAds.forEach((name) => {
+            const id = makeId(name);
+            const element = document.getElementById(id);
+            if (element) {
+              googletag.display(id);
+            }
+          });
+          
+          pubads.refresh();
+        }, 3000); // Reduced timeout to 3 seconds
+      };
+
+      // Use requestAnimationFrame for better timing
+      requestAnimationFrame(() => {
+        // Additional check with a small delay to ensure React has finished rendering
+        setTimeout(displayAdsWhenReady, 10);
+      });
     });
 
     return () => {
