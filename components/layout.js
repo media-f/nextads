@@ -20,6 +20,7 @@ export default function Layout({ children }) {
 
 
         <Script 
+          strategy="afterInteractive"
           type="text/javascript" 
           data-cmp-ab="1" 
           src="https://cdn.consentmanager.net/delivery/js/semiautomatic.min.js" 
