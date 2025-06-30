@@ -48,6 +48,24 @@ export default function Layout({ children }) {
               window.pubonline.loadAds()
           }
         />
+
+
+        <Script
+          data-cmp-src="https://sb.scorecardresearch.com/cs/1234567/beacon.js" 
+          data-cmp-purpose="c2" 
+          className="cmplazyload"
+          onLoad={() =>
+              window. COMSCORE.beacon ({ 
+                c1: "2", 
+                c2: "3538999" , 
+                mp_brand: "test", 
+                ns_site: "www.test.test"
+              })
+          }
+        />
+
+
+        
        
       </>
     )
