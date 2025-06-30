@@ -35,7 +35,7 @@ export default function Native() {
         <Columns />
 
 
-        <iframe height="300" width= "400" src="https://www.tiktok.com/player/v1/7377663484575616257?&music_info=1&description=1" allow="fullscreen" title="test"></iframe>
+        <iframe height="300" width= "400" src="https://www.tiktok.com/player/v1/7377663484575616257?&music_info=1&description=1" allow="fullscreen" title="test" data-cmp-purpose="c2" class="cmplazyload"></iframe>
 
         <h3>1 item</h3>
         <div data-placement="llhome2024" data-items="1"></div>
