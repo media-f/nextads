@@ -49,7 +49,7 @@ export default function Xandr() {
       <Script
           data-cmp-src="https://adnz.co/header.js?adTagId=279"
           strategy="lazyOnload"
-          data-cmp-vendor="783"
+          data-cmp-vendor="s1490"
           className="cmplazyload"
         />
 

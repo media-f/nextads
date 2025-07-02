@@ -42,7 +42,7 @@ export default function Layout({ children }) {
         <Script
           data-cmp-src="https://native.pubonline.ch/nativeads.js"
           strategy="lazyOnload"
-          data-cmp-purpose="c2" 
+          data-cmp-vendor="c66659"
           className="cmplazyload"
           onLoad={() =>
               window.pubonline.loadAds()
@@ -52,7 +52,7 @@ export default function Layout({ children }) {
 
         <Script
           data-cmp-src="https://sb.scorecardresearch.com/cs/1234567/beacon.js" 
-          data-cmp-purpose="c2" 
+          data-cmp-vendor="s92"
           className="cmplazyload"
           onLoad={() =>
               window. COMSCORE.beacon ({ 

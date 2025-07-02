@@ -82,6 +82,7 @@ export default function Home() {
 
     <Script
           data-cmp-src="https://adnz.co/header.js?adTagId=279"
+          data-cmp-vendor="s1490"
           className="cmplazyload"
           strategy="lazyOnload"
         />
