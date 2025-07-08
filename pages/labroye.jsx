@@ -7,12 +7,18 @@ import Adslot from "../components/adslot";
 
 export default function LG() {
   useEffect(() => {
-    const prefix = "LB"; // or "LG" on other site
+    const prefix = "LB";
 
     window.googletag = window.googletag || { cmd: [] };
 
-    const makeId = (name) => `${prefix}_${name}`;
-    const makePath = (name) => `/95737030/${makeId(name)}`;
+    const makeId = (name) => {
+      const slotName = prefix === "AGRI" ? name.toUpperCase() : name;
+      return `${prefix}_${slotName}`;
+    };
+    const makePath = (name) => {
+      const accountId = prefix === "AGRI" ? "23038965275" : "95737030";
+      return `/${accountId}/${makeId(name)}`;
+    };
 
     const adUnits = [
       { name: 'wideboard_1' },
