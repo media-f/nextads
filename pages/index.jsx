@@ -9,14 +9,6 @@ export default function Home() {
     useEffect(() => {
         if(window.pubonline) window.pubonline.loadAds()
         if(window.htag) window.htag.api('1').refreshAds()
-        setTimeout(() => {
-            const { googletag } = window
-            googletag.cmd.push(() => {
-                googletag.display('lg_wideboard_1');
-                googletag.pubads().refresh();
-            })
-         
-            }, 300)
       })
 
     return <>
