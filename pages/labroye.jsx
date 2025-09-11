@@ -33,7 +33,7 @@ useEffect(() => {
 
   const width = window.innerWidth;
   const wideboardSizes =
-    width > 994
+    width >= 994
       ? [
           [994, 250],
           [994, 500],
@@ -56,8 +56,8 @@ useEffect(() => {
   const halfpageSizes = [[300, 600]];
 
   const getSizes = (name) => {
-    if (name === "wideboard_1" && width <= 994) return [];
-    if (name === "mobile_1") return mobileSizes;
+    if (name === "wideboard_1" && width < 994) return [];
+  if (name === "mobile_1") return width < 994 ? mobileSizes : [];
     if (name === "halfpage_1") return halfpageSizes;
     return name.startsWith("rectangle") ? rectangleSizes : wideboardSizes;
   };
@@ -166,6 +166,7 @@ useEffect(() => {
     destroySlots();
   };
 }, []);
+
 
 
   return (
