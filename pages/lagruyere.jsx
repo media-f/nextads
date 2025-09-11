@@ -90,6 +90,8 @@ useEffect(() => {
     const availableAds = [];
     const pendingAds = new Set();
     adUnits.forEach(({ name }) => {
+      const sizes = getSizes(name);
+      if (!sizes || (Array.isArray(sizes) && sizes.length === 0)) return;
       const id = makeId(name);
       const element = document.getElementById(id);
       if (element) {
