@@ -5,7 +5,7 @@ import Columns from "../components/columns";
 import Menu from "../components/menu";
 import Adslot from "../components/adslot";
 
-export default function LG() {
+export default function LB() {
 useEffect(() => {
   const prefix = "LB"; // or "LB" or "AGRI" on other site
 
@@ -72,12 +72,14 @@ useEffect(() => {
     destroySlots();
     const pubads = window.googletag.pubads();
 
-    // Define all slots first
+    // Define all slots first, skip if getSizes returns []
     adUnits.forEach(({ name }) => {
       const id = makeId(name);
       const path = makePath(name);
+      const sizes = getSizes(name);
+      if (!sizes || (Array.isArray(sizes) && sizes.length === 0)) return;
       window.googletag
-        .defineSlot(path, getSizes(name), id)
+        .defineSlot(path, sizes, id)
         ?.addService(pubads);
     });
 
@@ -164,6 +166,7 @@ useEffect(() => {
     destroySlots();
   };
 }, []);
+
 
   return (
     <>
