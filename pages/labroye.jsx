@@ -6,169 +6,164 @@ import Menu from "../components/menu";
 import Adslot from "../components/adslot";
 
 export default function LG() {
-  useEffect(() => {
-    const prefix = "LB";
+useEffect(() => {
+  const prefix = "LB"; // or "LB" or "AGRI" on other site
 
-    window.googletag = window.googletag || { cmd: [] };
+  window.googletag = window.googletag || { cmd: [] };
 
-    const makeId = (name) => {
-      const slotName = prefix === "AGRI" ? name.toUpperCase() : name;
-      return `${prefix}_${slotName}`;
-    };
-    const makePath = (name) => {
-      const accountId = prefix === "AGRI" ? "23038965275" : "95737030";
-      return `/${accountId}/${makeId(name)}`;
-    };
+  const makeId = (name) => {
+    const slotName = prefix === "AGRI" ? name.toUpperCase() : name;
+    return `${prefix}_${slotName}`;
+  };
+  const makePath = (name) => {
+    const accountId = prefix === "AGRI" ? "23038965275" : "95737030";
+    return `/${accountId}/${makeId(name)}`;
+  };
 
-    const adUnits = [
-      { name: 'wideboard_1' },
-      { name: 'wideboard_2' },
-      { name: 'wideboard_3' },
-      { name: 'wideboard_4' },
-      { name: 'rectangle_1' },
-      { name: 'rectangle_2' },
-      { name: 'halfpage_1', sizes: [[300, 600]] },
-    ];
+  const adUnits = [
+    { name: "mobile_1" },
+    { name: "wideboard_1" },
+    { name: "wideboard_2" },
+    { name: "wideboard_3" },
+    { name: "wideboard_4" },
+    { name: "rectangle_1" },
+    { name: "rectangle_2" },
+    { name: "halfpage_1" },
+  ];
 
-    const width = window.innerWidth;
-    const wideboardSizes = width > 994
-      ? [[994, 250], [994, 500], [994, 118]]
-      : [[300, 250], [320, 460]];
+  const width = window.innerWidth;
+  const wideboardSizes =
+    width > 994
+      ? [
+          [994, 250],
+          [994, 500],
+          [994, 118],
+        ]
+      : [
+          [300, 250],
+          [320, 460],
+        ];
 
-    const rectangleSizes = [[300, 250], [320, 460]];
+  const rectangleSizes = [
+    [300, 250],
+    [320, 460],
+  ];
+  const mobileSizes = [
+    [300, 250],
+    [320, 460],
+    [320, 100],
+  ];
+  const halfpageSizes = [[300, 600]];
 
-    const getSizes = (name, overrideSizes) => {
-      if (overrideSizes) return overrideSizes;
-      return name.startsWith('rectangle') ? rectangleSizes : wideboardSizes;
-    };
+  const getSizes = (name) => {
+    if (name === "wideboard_1" && width <= 994) return [];
+    if (name === "mobile_1") return mobileSizes;
+    if (name === "halfpage_1") return halfpageSizes;
+    return name.startsWith("rectangle") ? rectangleSizes : wideboardSizes;
+  };
 
-    const destroySlots = () => {
-      if (window.googletag?.destroySlots) {
-        window.googletag.destroySlots();
+  const destroySlots = () => {
+    if (window.googletag?.destroySlots) {
+      window.googletag.destroySlots();
+    }
+  };
+
+  window.googletag.cmd.push(() => {
+    destroySlots();
+    const pubads = window.googletag.pubads();
+
+    // Define all slots first
+    adUnits.forEach(({ name }) => {
+      const id = makeId(name);
+      const path = makePath(name);
+      window.googletag
+        .defineSlot(path, getSizes(name), id)
+        ?.addService(pubads);
+    });
+
+    pubads.disableInitialLoad();
+    window.googletag.enableServices();
+
+    // Prepare available and pending ads
+    const availableAds = [];
+    const pendingAds = new Set();
+    adUnits.forEach(({ name }) => {
+      const id = makeId(name);
+      const element = document.getElementById(id);
+      if (element) {
+        availableAds.push(name);
+      } else {
+        pendingAds.add(name);
+      }
+    });
+
+    // Display immediately available ads
+    availableAds.forEach((name) => {
+      const id = makeId(name);
+      window.googletag.display(id);
+    });
+
+    if (pendingAds.size === 0) {
+      pubads.refresh();
+      return;
+    }
+
+    // Helper to check and display pending ads
+    const checkAndDisplay = () => {
+      for (const name of Array.from(pendingAds)) {
+        const id = makeId(name);
+        const element = document.getElementById(id);
+        if (element) {
+          window.googletag.display(id);
+          pendingAds.delete(name);
+        }
+      }
+      if (pendingAds.size === 0) {
+        if (observer) observer.disconnect();
+        if (timeoutId) clearTimeout(timeoutId);
+        pubads.refresh();
       }
     };
 
-    window.googletag.cmd.push(() => {
-      destroySlots();
-
-      const pubads = googletag.pubads();
-
-      adUnits.forEach(({ name, sizes }) => {
-        const id = makeId(name);
-        const path = makePath(name);
-        // Define slot regardless of element existence - it will be used when element is ready
-        googletag.defineSlot(path, getSizes(name, sizes), id)?.addService(pubads);
-      });
-
-      pubads.disableInitialLoad();
-      googletag.enableServices();
-
-      // Improved approach: use Intersection Observer and DOM ready checks
-      const displayAdsWhenReady = () => {
-        const availableAds = [];
-        const pendingAds = [];
-
-        // Check which ads are already available
-        adUnits.forEach(({ name }) => {
-          const id = makeId(name);
-          const element = document.getElementById(id);
-          if (element) {
-            availableAds.push(name);
-          } else {
-            pendingAds.push(name);
-          }
-        });
-
-        // Display immediately available ads
-        if (availableAds.length > 0) {
-          availableAds.forEach((name) => {
-            const id = makeId(name);
-            googletag.display(id);
+    // Observe DOM for ad containers
+    const observer = new MutationObserver((mutations) => {
+      let shouldCheck = false;
+      mutations.forEach((mutation) => {
+        if (mutation.type === "childList") {
+          mutation.addedNodes.forEach((node) => {
+            if (
+              node.nodeType === Node.ELEMENT_NODE &&
+              node.id &&
+              node.id.startsWith(prefix + "_")
+            ) {
+              shouldCheck = true;
+            }
           });
         }
-
-        // If all ads are ready, refresh and exit
-        if (pendingAds.length === 0) {
-          pubads.refresh();
-          return;
-        }
-
-        // Wait for remaining ads with MutationObserver
-        let observer;
-        let timeoutId;
-        let displayedCount = availableAds.length;
-
-        const checkAndDisplay = () => {
-          pendingAds.forEach((name, index) => {
-            const id = makeId(name);
-            const element = document.getElementById(id);
-            if (element) {
-              googletag.display(id);
-              displayedCount++;
-              pendingAds.splice(index, 1);
-            }
-          });
-
-          // If all ads are now displayed, clean up and refresh
-          if (pendingAds.length === 0) {
-            if (observer) observer.disconnect();
-            if (timeoutId) clearTimeout(timeoutId);
-            pubads.refresh();
-          }
-        };
-
-        observer = new MutationObserver((mutations) => {
-          let shouldCheck = false;
-          mutations.forEach((mutation) => {
-            if (mutation.type === 'childList') {
-              mutation.addedNodes.forEach((node) => {
-                if (node.nodeType === Node.ELEMENT_NODE && 
-                    node.id && 
-                    node.id.startsWith(prefix + '_')) {
-                  shouldCheck = true;
-                }
-              });
-            }
-          });
-
-          if (shouldCheck) {
-            checkAndDisplay();
-          }
-        });
-
-        observer.observe(document.body, {
-          childList: true,
-          subtree: true
-        });
-
-        // Fallback: force display after reasonable timeout
-        timeoutId = setTimeout(() => {
-          if (observer) observer.disconnect();
-          
-          // Display any remaining ads that are now available
-          pendingAds.forEach((name) => {
-            const id = makeId(name);
-            const element = document.getElementById(id);
-            if (element) {
-              googletag.display(id);
-            }
-          });
-          
-          pubads.refresh();
-        }, 3000); // Reduced timeout to 3 seconds
-      };
-
-      // Use requestAnimationFrame for better timing
-      requestAnimationFrame(() => {
-        // Additional check with a small delay to ensure React has finished rendering
-        setTimeout(displayAdsWhenReady, 10);
       });
+      if (shouldCheck) checkAndDisplay();
     });
+    observer.observe(document.body, { childList: true, subtree: true });
 
-    return () => {
-      destroySlots();
-    };
-  }, []);
+    // Fallback: force display after reasonable timeout
+    const timeoutId = setTimeout(() => {
+      if (observer) observer.disconnect();
+      for (const name of Array.from(pendingAds)) {
+        const id = makeId(name);
+        const element = document.getElementById(id);
+        if (element) {
+          window.googletag.display(id);
+          pendingAds.delete(name);
+        }
+      }
+      pubads.refresh();
+    }, 3000); // Reduced timeout to 3 seconds
+  });
+
+  return () => {
+    destroySlots();
+  };
+}, []);
 
   return (
     <>
@@ -178,7 +173,9 @@ export default function LG() {
         <Menu></Menu>  
         <Adslot prefix="LB" name="wideboard_1" />
 
-        
+        <Columns>
+          <Adslot prefix="LB" name="mobile_1"></Adslot>
+        </Columns>
         <Columns>
           <Adslot prefix="LB" name="rectangle_1">
             <h3>LB_rectangle_1</h3>
