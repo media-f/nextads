@@ -20,6 +20,10 @@ useEffect(() => {
     return `/${accountId}/${makeId(name)}`;
   };
 
+  // 640px
+
+
+
   const adUnits = [
     { name: "mobile_1" },
     { name: "wideboard_1" },
@@ -31,9 +35,11 @@ useEffect(() => {
     { name: "halfpage_1" },
   ];
 
-  const width = window.innerWidth;
+  const isDesktop = window.innerWidth >= 994;
+  const isMobile = window.innerWidth < 640;
+
   const wideboardSizes =
-    width >= 994
+    isDesktop
       ? [
           [994, 250],
           [994, 500],
@@ -56,9 +62,9 @@ useEffect(() => {
   const halfpageSizes = [[300, 600]];
 
   const getSizes = (name) => {
-    if (name === "wideboard_1" && width < 994) return [];
-  if (name === "mobile_1") return width < 994 ? mobileSizes : [];
-    if (name === "halfpage_1") return halfpageSizes;
+    if (name === "wideboard_1" && isMobile) return [];
+    if (name === "mobile_1") return isMobile ? mobileSizes : [];
+    if (name === "halfpage_1") return isDesktop ? halfpageSizes : [];
     return name.startsWith("rectangle") ? rectangleSizes : wideboardSizes;
   };
 
@@ -168,6 +174,7 @@ useEffect(() => {
     destroySlots();
   };
 }, []);
+
 
 
 
